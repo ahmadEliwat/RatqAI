@@ -1,2 +1,21 @@
 [build]
   publish = "."
+
+# Consolidate the production hostname; deploy preview hostnames are unaffected.
+[[redirects]]
+  from = "https://peaceful-cannoli-5c623a.netlify.app/*"
+  to = "https://ratqai.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.ratqai.com/*"
+  to = "https://ratqai.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true

@@ -47,19 +47,20 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="styles.css?v=20" />
+    <link rel="stylesheet" href="styles.css?v=30" />
   </head>
-  <body>
+  <body data-page="home">
     <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
     <header class="site-header">
       <div class="shell nav-wrap">
-        <a class="wordmark" href="#home" aria-label="RatqAI home" dir="ltr"
+        <a class="wordmark" href="./" aria-label="RatqAI home" dir="ltr"
           >ratq<span>ai</span><b>.</b></a
         >
         <nav id="navigation" aria-label="Main navigation">
-          <a href="#work" data-i18n="navWork">The possibilities</a
-          ><a href="#services" data-i18n="navServices">Expertise</a
-          ><a href="#approach" data-i18n="navApproach">Our approach</a>
+          <a href="./#services" data-i18n="navServices">Expertise</a
+          ><a href="./#work" data-i18n="navWork">Selected concepts</a
+          ><a href="concepts.html" data-i18n="navPortfolio">Concept gallery</a
+          ><a href="./#approach" data-i18n="navApproach">Our approach</a>
         </nav>
         <div class="nav-actions">
           <button
@@ -69,13 +70,13 @@
             aria-label="Switch to Arabic"
           >
             العربية</button
-          ><a href="#contact" class="nav-contact"
-            ><span data-i18n="navContact">Start a conversation</span
+          ><a href="./#contact" class="nav-contact"
+            ><span data-i18n="navContact">Let’s talk</span
             ><span aria-hidden="true">↗</span></a
           ><button
             id="menu-toggle"
             class="menu-toggle"
-            aria-label="Open navigation"
+            aria-label="Toggle navigation"
             aria-expanded="false"
             aria-controls="navigation"
           >
@@ -85,306 +86,234 @@
       </div>
     </header>
     <main id="main">
-      <section id="home" class="hero shell">
+      <section class="hero shell" id="home">
         <div class="hero-copy">
-          <p class="eyebrow">
-            <span class="status-dot"></span
-            ><span data-i18n="heroEyebrow"
-              >INDEPENDENT DIGITAL ENGINEERING STUDIO</span
-            >
+          <p class="eyebrow" data-i18n="heroEyebrow">
+            DIGITAL CRAFT. BUSINESS PURPOSE.
           </p>
           <h1 data-i18n="heroTitle">
-            Your ambition.<br />Our craft.<br /><em>Real possibility.</em>
+            We Build Digital<br /><em>Experiences</em> That<br />Move
+            Businesses<br />Forward.
           </h1>
           <p class="hero-description" data-i18n="heroCopy">
-            Distinctive websites. Purpose-built systems. Thoughtful automation.
-            We turn the way you want to work into the way you do.
+            From beautiful websites and custom software to powerful business
+            systems and intelligent automation, RatqAI turns ambitious ideas
+            into practical digital solutions.
           </p>
           <div class="hero-actions">
-            <a class="button gold" href="#work"
-              ><span data-i18n="heroCTA">Explore what’s possible</span
+            <a class="button gold" href="#contact"
+              ><span data-i18n="heroCTA">Start Your Project</span
               ><span aria-hidden="true">↗</span></a
-            ><a class="text-link" href="#contact"
-              ><span data-i18n="heroSecondary">Tell us your idea</span
-              ><span aria-hidden="true">↗</span></a
-            >
-          </div>
-          <div class="hero-caption">
-            <span class="small-rule"></span
-            ><span data-i18n="heroNote"
-              >Designed with intent. Engineered around you.</span
+            ><a class="text-link" href="#work"
+              ><span data-i18n="heroSecondary">Explore Our Work</span
+              ><span aria-hidden="true">↓</span></a
             >
           </div>
         </div>
         <div
-          class="hero-stage"
-          aria-label="Fictional restaurant and academy interface previews"
+          class="hero-art"
+          aria-label="Fictional software design review interface"
         >
-          <div class="stage-label">
-            <span data-i18n="stageLabel">A GLIMPSE OF WHAT WE BUILD</span
-            ><span>01 — 05</span>
-          </div>
-          <div class="stage-browser">
-            <div class="browser-bar">
-              <span class="window-dots" aria-hidden="true">● ● ●</span
-              ><span dir="ltr">saffron / dining experience</span><span>↗</span>
-            </div>
-            <div class="hero-restaurant">
-              <img
-                src="assets/dining.jpg"
-                alt="Illustrative fine dining interior"
-                width="1400"
-                height="933"
-                fetchpriority="high"
-              />
-              <div class="restaurant-nav">
-                <b dir="ltr">saffron<span> HOUSE</span></b
-                ><span data-i18n="concept">Concept / Demo</span>
-              </div>
-              <div class="restaurant-headline">
-                <span data-i18n="restaurantMicro"
-                  >AMMAN · MODERN LEVANTINE</span
-                >
-                <p data-i18n="restaurantHero">
-                  A table.<br />A story.<br />A little saffron.
-                </p>
-                <span class="mini-cta" data-i18n="restaurantBook"
-                  >Find your table ↗</span
-                >
-              </div>
-            </div>
-          </div>
-          <div class="stage-ticket">
-            <span class="ticket-icon" aria-hidden="true">✓</span>
-            <div>
-              <small data-i18n="enrollmentLabel">ENROLLMENT PREVIEW</small
-              ><strong data-i18n="ticketTitle"
-                >A clearer start to learning.</strong
-              ><span data-i18n="ticketBody"
-                >Application → review → welcome</span
-              >
-            </div>
-          </div>
-          <div class="stage-foot">
-            <span data-i18n="stageFoot"
-              >Different industries. The same attention to detail.</span
-            ><a href="#work" aria-label="Explore concept demos">↓</a>
-          </div>
-        </div>
-      </section>
-      <div class="industry-ribbon">
-        <div class="shell">
-          <span data-i18n="ribbonLead">YOUR INDUSTRY. NEW POSSIBILITIES.</span>
-          <p data-i18n="industries">
-            Hospitality <i>·</i> Education <i>·</i> Retail <i>·</i> Real estate
-            <i>·</i> Professional services
-          </p>
-        </div>
-      </div>
-      <section id="work" class="work-section">
-        <div class="shell section-heading reveal">
-          <div>
-            <p class="eyebrow" data-i18n="workLabel">
-              01 / POSSIBILITIES, MADE TANGIBLE
-            </p>
-            <h2 data-i18n="workTitle">
-              Don’t just imagine it.<br /><em>Step inside.</em>
-            </h2>
-          </div>
-          <div class="heading-note">
-            <p data-i18n="workCopy">
-              A restaurant with a better first impression. An academy with a
-              simpler day. A business with room to grow. Explore what thoughtful
-              technology can look like.
-            </p>
-            <span class="disclosure" data-i18n="workDisclaimer"
-              >All examples are fictional Concept / Demo experiences, not client
-              projects or results.</span
+          <div class="art-heading">
+            <span data-i18n="heroArtLabel">THE DETAIL IS THE DIFFERENCE.</span
+            ><span class="sample-label" data-i18n="concept"
+              >Concept / Demo</span
             >
           </div>
-        </div>
-        <article class="story restaurant-story shell reveal">
-          <div class="story-top">
-            <div>
-              <span class="eyebrow" data-i18n="diningCategory"
-                >01 / RESTAURANTS & CAFÉS</span
-              >
-              <h3 data-i18n="diningTitle">
-                Make the first impression<br />before the first course.
-              </h3>
+          <div class="craft-browser">
+            <div class="craft-toolbar">
+              <b dir="ltr">folio<span> / studio</span></b
+              ><span class="review-status" data-i18n="designReview"
+                >Design review</span
+              ><span class="small-avatar" aria-hidden="true">F</span>
             </div>
-            <p data-i18n="diningCopy">
-              An inviting website, a considered menu, and a simple path to a
-              reservation. Bring your hospitality to every screen.
-            </p>
-          </div>
-          <div class="demo-frame dining-frame" id="dining-preview"></div>
-          <div class="story-bottom">
-            <span data-i18n="diningFeatures"
-              >Brand experience / Digital menu / Reservations</span
-            ><button class="text-link" data-demo="dining">
-              <span data-i18n="exploreDemo">Explore the concept</span> ↗
-            </button>
-          </div>
-        </article>
-        <article class="academy-story">
-          <div class="shell academy-layout">
-            <div class="story-copy reveal">
-              <span class="eyebrow" data-i18n="academyCategory"
-                >02 / SCHOOLS & ACADEMIES</span
-              >
-              <h3 data-i18n="academyTitle">
-                More learning.<br /><em>Less admin.</em>
-              </h3>
-              <p data-i18n="academyCopy">
-                Give prospective students a clear path to enrollment. Give your
-                team one considered workspace for applications, classes, and the
-                next conversation.
-              </p>
-              <div class="story-tags">
-                <span data-i18n="academyTag1">Student enrollment</span
-                ><span data-i18n="academyTag2">Management workspace</span>
-              </div>
-              <button class="button dark" data-demo="academy">
-                <span data-i18n="openWorkspace">Open the workspace</span
-                ><span aria-hidden="true">↗</span></button
-              ><span class="disclosure" data-i18n="sampleData"
-                >Concept / Demo · Illustrative data</span
-              >
-            </div>
-            <div class="academy-device reveal">
-              <div id="academy-preview" class="demo-frame"></div>
-            </div>
-          </div>
-        </article>
-        <article class="story retail-story shell reveal">
-          <div class="story-top">
-            <div>
-              <span class="eyebrow" data-i18n="retailCategory"
-                >03 / RETAIL & ECOMMERCE</span
-              >
-              <h3 data-i18n="retailTitle">
-                Beautiful to browse.<br />Simple to run.
-              </h3>
-            </div>
-            <p data-i18n="retailCopy">
-              A distinctive storefront paired with a practical view of products,
-              inventory, and orders. An experience that considers both sides of
-              the counter.
-            </p>
-          </div>
-          <div id="retail-preview" class="retail-composition"></div>
-          <div class="story-bottom">
-            <span data-i18n="retailFeatures"
-              >Online storefront / Product discovery / Order management</span
-            ><button class="text-link" data-demo="retail">
-              <span data-i18n="exploreDemo">Explore the concept</span> ↗
-            </button>
-          </div>
-        </article>
-        <div class="shell other-stories">
-          <article class="property-story reveal">
-            <div class="property-image">
-              <img
-                src="assets/residence.jpg"
-                alt="Illustrative contemporary villa"
-                loading="lazy"
-                width="1400"
-                height="933"
-              /><span class="concept-pill" data-i18n="concept"
-                >Concept / Demo</span
-              ><span class="property-brand" dir="ltr"
-                >DARNA<span>PROPERTIES</span></span
-              >
-            </div>
-            <div class="compact-story">
-              <span class="eyebrow" data-i18n="propertyCategory"
-                >04 / REAL ESTATE</span
-              >
-              <h3 data-i18n="propertyTitle">
-                Spaces worth<br />a closer look.
-              </h3>
-              <p data-i18n="propertyCopy">
-                Property discovery with useful filters, rich details, and an
-                easy path to an inquiry.
-              </p>
-              <button class="text-link" data-demo="property">
-                <span data-i18n="exploreProperties"
-                  >Explore the properties</span
+            <div class="review-title">
+              <div>
+                <span class="micro" data-i18n="projectSpace"
+                  >PROJECT SPACE / FORMA</span
                 >
-                ↗
-              </button>
+                <h2 data-i18n="reviewHeadline">An idea, taking shape.</h2>
+              </div>
+              <span class="review-count">01 / 03</span>
             </div>
-          </article>
-          <article class="crm-story reveal">
-            <div id="crm-preview" class="demo-frame"></div>
-            <div class="compact-story">
-              <span class="eyebrow" data-i18n="crmCategory"
-                >05 / SERVICES & BUSINESS OPERATIONS</span
+            <div class="review-screen">
+              <div class="store-nav">
+                <b dir="ltr">FORMA</b
+                ><span data-i18n="storeCollection">Everyday collection</span
+                ><span aria-hidden="true">＋</span>
+              </div>
+              <div class="store-composition">
+                <div>
+                  <span class="micro" data-i18n="storeSeason"
+                    >A NEW PERSPECTIVE</span
+                  >
+                  <h3 data-i18n="storeTitle">Less.<br />But better.</h3>
+                  <span class="store-link" data-i18n="storeEdit"
+                    >Discover the edit —</span
+                  >
+                </div>
+                <img
+                  src="assets/fashion.webp"
+                  alt="Illustrative neutral knitwear"
+                  width="1000"
+                  height="1250"
+                  fetchpriority="high"
+                />
+              </div>
+            </div>
+            <div class="review-footer">
+              <div>
+                <span class="review-dot" aria-hidden="true"></span
+                ><span data-i18n="screenReady"
+                  >Homepage · Ready for review</span
+                >
+              </div>
+              <span class="micro" data-i18n="craftDetail"
+                >DESIGN + DEVELOPMENT</span
               >
-              <h3 data-i18n="crmTitle">
-                Every inquiry.<br />A thoughtful next step.
-              </h3>
-              <p data-i18n="crmCopy">
-                A focused CRM that helps your team follow conversations, assign
-                ownership, and spend less time on routine follow-ups.
-              </p>
-              <button class="text-link" data-demo="crm">
-                <span data-i18n="exploreCRM">Explore the CRM</span> ↗
-              </button>
             </div>
-          </article>
+          </div>
+          <p class="art-caption" data-i18n="heroArtCaption">
+            Considered on the surface. Carefully engineered underneath.
+          </p>
+        </div>
+        <div class="hero-bottom">
+          <span data-i18n="heroFoot"
+            >An independent studio. A business-first perspective.</span
+          ><span data-i18n="heroScope">WEBSITES / SOFTWARE / AUTOMATION</span>
         </div>
       </section>
-      <section id="services" class="services-section">
+      <section id="services" class="expertise-section shell">
+        <div class="expertise-intro reveal">
+          <p class="eyebrow" data-i18n="servicesLabel">01 / OUR EXPERTISE</p>
+          <h2 data-i18n="servicesTitle">
+            Built around<br /><em>your business.</em>
+          </h2>
+          <p data-i18n="servicesCopy">
+            A beautiful first impression is only the beginning. We bring design,
+            software, and business thinking together to build what comes next.
+          </p>
+          <span class="expertise-note" data-i18n="expertiseNote"
+            >A considered approach, from the first screen to the work behind
+            it.</span
+          >
+        </div>
+        <div id="service-list" class="service-list reveal"></div>
+      </section>
+      <section id="work" class="selected-section">
         <div class="shell">
           <div class="section-heading reveal">
             <div>
-              <p class="eyebrow" data-i18n="servicesLabel">
-                02 / OUR EXPERTISE
+              <p class="eyebrow" data-i18n="workLabel">
+                02 / SELECTED CONCEPTS
               </p>
-              <h2 data-i18n="servicesTitle">
-                The experience.<br /><em>And the engineering.</em>
+              <h2 data-i18n="workTitle">
+                Made to be seen.<br /><em>Built to be used.</em>
               </h2>
             </div>
-            <p class="heading-note" data-i18n="servicesCopy">
-              From the first screen to the work behind it, we build around what
-              your business actually needs.
-            </p>
+            <div class="heading-note">
+              <p data-i18n="workCopy">
+                Two different businesses. The same care for the people using
+                them. A closer look at what we can create.
+              </p>
+              <span class="disclosure" data-i18n="workDisclaimer"
+                >Fictional Concept / Demo experiences. Not delivered client
+                projects.</span
+              >
+            </div>
           </div>
-          <div id="service-list" class="service-list"></div>
+          <article class="case-story reveal">
+            <div class="case-display dining-display" id="dining-preview"></div>
+            <div class="case-caption">
+              <div>
+                <span class="eyebrow" data-i18n="diningCategory"
+                  >HOSPITALITY / WEBSITE & RESERVATIONS</span
+                >
+                <h3 dir="ltr">Saffron House</h3>
+              </div>
+              <p data-i18n="diningCopy">
+                Warm hospitality, translated into a distinctive website,
+                seasonal menu, and effortless reservation experience.
+              </p>
+              <button
+                class="round-link"
+                data-demo="dining"
+                aria-label="Explore Saffron House concept"
+              >
+                <span data-i18n="viewConcept">Explore concept</span
+                ><b aria-hidden="true">↗</b>
+              </button>
+            </div>
+          </article>
+          <article class="case-story reveal">
+            <div
+              class="case-display academy-display"
+              id="academy-preview"
+            ></div>
+            <div class="case-caption">
+              <div>
+                <span class="eyebrow" data-i18n="academyCategory"
+                  >EDUCATION / ENROLLMENT & MANAGEMENT</span
+                >
+                <h3 dir="ltr">Noura Academy</h3>
+              </div>
+              <p data-i18n="academyCopy">
+                A calmer workspace for applications, students, and the next
+                conversation. Less friction for everyone.
+              </p>
+              <button
+                class="round-link"
+                data-demo="academy"
+                aria-label="Explore Noura Academy concept"
+              >
+                <span data-i18n="viewConcept">Explore concept</span
+                ><b aria-hidden="true">↗</b>
+              </button>
+            </div>
+          </article>
+          <div class="portfolio-bridge reveal">
+            <p data-i18n="portfolioBridge">
+              Different industries.<br />The same attention to detail.
+            </p>
+            <a href="concepts.html" class="button outline-dark"
+              ><span data-i18n="allConcepts">Explore all five concepts</span
+              ><span aria-hidden="true">↗</span></a
+            ><span data-i18n="portfolioIndustries"
+              >HOSPITALITY · EDUCATION · RETAIL · PROPERTY · SERVICES</span
+            >
+          </div>
         </div>
       </section>
-      <section id="approach" class="approach-section shell">
-        <div class="section-heading reveal">
-          <div>
-            <p class="eyebrow" data-i18n="approachLabel">
-              03 / A CONSIDERED WAY FORWARD
-            </p>
-            <h2 data-i18n="approachTitle">
-              Good work starts<br />with understanding.
-            </h2>
-          </div>
-          <p class="heading-note" data-i18n="approachCopy">
-            RatqAI is an independent digital solutions studio. We bring business
-            understanding, clear design, and practical engineering to the same
-            conversation.
+      <section id="why" class="why-section shell">
+        <div class="why-heading reveal">
+          <p class="eyebrow" data-i18n="whyLabel">03 / WHY RATQAI</p>
+          <h2 data-i18n="whyTitle">
+            Good technology.<br /><em>Grounded in your reality.</em>
+          </h2>
+          <p data-i18n="whyCopy">
+            We start with how your business works, not a template. Then shape
+            the right experience and the right engineering around it.
           </p>
+        </div>
+        <div class="value-list reveal" id="value-list"></div>
+      </section>
+      <section id="approach" class="process-section shell">
+        <div class="process-heading">
+          <p class="eyebrow" data-i18n="approachLabel">04 / OUR PROCESS</p>
+          <h2 data-i18n="approachTitle">Clarity, at every step.</h2>
         </div>
         <div class="process-steps" id="process-steps"></div>
       </section>
       <section id="contact" class="contact-section">
         <div class="shell contact-layout">
           <div class="contact-copy reveal">
-            <p class="eyebrow" data-i18n="contactLabel">
-              04 / YOUR NEXT CHAPTER
-            </p>
+            <p class="eyebrow" data-i18n="contactLabel">05 / START A PROJECT</p>
             <h2 data-i18n="contactTitle">
-              Let’s build<br /><em>something<br />that matters.</em>
+              Your next chapter<br /><em>starts here.</em>
             </h2>
             <p data-i18n="contactCopy">
-              A new idea, an existing challenge, or a better way to work. Tell
-              us where you want to go.
+              A new idea or a better way to work. Tell us what you have in mind.
+              We’ll help you find a practical way forward.
             </p>
             <a
               class="email-link"
@@ -404,14 +333,14 @@
           <form id="project-form" class="project-form reveal">
             <div class="form-pair">
               <label
-                ><span data-i18n="formName">Your name</span
+                ><span data-i18n="formName">Name</span
                 ><input
                   name="name"
                   autocomplete="name"
                   required
                   maxlength="100" /></label
               ><label
-                ><span data-i18n="formEmail">Email address</span
+                ><span data-i18n="formEmail">Email</span
                 ><input
                   name="email"
                   type="email"
@@ -422,7 +351,7 @@
               /></label>
             </div>
             <label
-              ><span data-i18n="formCompany">Company / brand</span
+              ><span data-i18n="formCompany">Business name (optional)</span
               ><input
                 name="company"
                 autocomplete="organization"
@@ -430,16 +359,15 @@
             /></label>
             <div class="form-pair">
               <label
-                ><span data-i18n="formService">What do you have in mind?</span
+                ><span data-i18n="formService">Project type</span
                 ><select name="service" id="project-service"></select></label
               ><label
-                ><span data-i18n="formIndustry">Your industry</span
-                ><select name="industry" id="project-industry"></select
+                ><span data-i18n="formBudget">Budget range (optional)</span
+                ><select name="budget" id="project-budget"></select
               ></label>
             </div>
             <label
-              ><span data-i18n="formMessage"
-                >Tell us a little about your project</span
+              ><span data-i18n="formMessage">A little about your project</span
               ><textarea
                 name="message"
                 rows="3"
@@ -447,16 +375,16 @@
                 maxlength="3000"
               ></textarea></label
             ><button class="button gold" type="submit">
-              <span data-i18n="formSubmit">Prepare project inquiry</span
+              <span data-i18n="formSubmit">Prepare Your Inquiry</span
               ><span aria-hidden="true">↗</span>
             </button>
             <p class="form-note" data-i18n="formNote">
-              This prepares an email in your email app. Your details are not
-              stored on this website.
+              We’ll prepare an email draft for you to review and send in your
+              email app. Nothing is submitted or stored here.
             </p>
             <p id="form-status" role="status" hidden></p>
             <a id="mail-draft" class="text-link" hidden data-i18n="openEmail"
-              >Open your email app ↗</a
+              >Review email draft ↗</a
             >
           </form>
         </div>
@@ -464,13 +392,11 @@
     </main>
     <footer class="footer shell">
       <div class="footer-top">
-        <a class="wordmark" href="#home" aria-label="RatqAI home" dir="ltr"
+        <a class="wordmark" href="./" aria-label="RatqAI home" dir="ltr"
           >ratq<span>ai</span><b>.</b></a
         >
-        <p data-i18n="footerLine">
-          Thoughtful technology.<br />Practical outcomes.
-        </p>
-        <a href="#home" class="text-link"
+        <p data-i18n="footerLine">Thoughtful technology. Practical outcomes.</p>
+        <a href="#main" class="text-link"
           ><span data-i18n="backTop">Back to top</span> ↑</a
         >
       </div>
@@ -478,7 +404,13 @@
         <span
           >© <span id="year"></span> RatqAI.
           <span data-i18n="rights">All rights reserved.</span></span
-        ><span data-i18n="footerNote">Websites. Systems. Possibilities.</span>
+        ><a
+          href="https://www.instagram.com/ratqai/"
+          target="_blank"
+          rel="noopener noreferrer"
+          dir="ltr"
+          >Instagram / @ratqai ↗</a
+        >
       </div>
     </footer>
     <dialog id="demo-dialog" aria-labelledby="demo-title">
@@ -492,12 +424,11 @@
         </button>
       </div>
       <p class="demo-notice" data-i18n="demoNotice">
-        A fictional, interactive front-end sample. No bookings, orders, or
-        applications are sent or saved.
+        Fictional interactive preview. Nothing is sent, booked, or purchased.
       </p>
       <div id="demo-content"></div>
     </dialog>
     <div class="toast" id="toast" role="status" hidden></div>
-    <script src="script.js?v=20"></script>
+    <script src="script.js?v=30"></script>
   </body>
 </html>

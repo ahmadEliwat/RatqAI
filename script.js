@@ -1,259 +1,255 @@
 "use strict";
-// Fictional examples only. All sample interaction stays in memory.
+// Fictional concept samples. No booking, purchase, or application is submitted.
 const COPY = {
   skip: ["Skip to content", "انتقل إلى المحتوى"],
-  navWork: ["The possibilities", "ما يمكننا بناؤه"],
   navServices: ["Expertise", "خبراتنا"],
+  navWork: ["Selected concepts", "تصوّرات مختارة"],
+  navPortfolio: ["Concept gallery", "معرض التصوّرات"],
   navApproach: ["Our approach", "منهجنا"],
-  navContact: ["Start a conversation", "لنبدأ الحديث"],
+  navContact: ["Let’s talk", "لنتحدّث"],
   heroEyebrow: [
-    "INDEPENDENT DIGITAL ENGINEERING STUDIO",
-    "استوديو مستقل للتصميم والتطوير الرقمي",
+    "DIGITAL CRAFT. BUSINESS PURPOSE.",
+    "حِرفة رقمية. وغاية تخدم أعمالك.",
   ],
   heroTitle: [
-    "Your ambition.<br>Our craft.<br><em>Real possibility.</em>",
-    "طموحك.<br>خبرتنا.<br><em>إمكانات تتحقّق.</em>",
+    "We Build Digital<br><em>Experiences</em> That<br>Move Businesses<br>Forward.",
+    "نبني تجارب<br><em>رقمية</em> تدفع<br>أعمالك نحو<br>المستقبل.",
   ],
   heroCopy: [
-    "Distinctive websites. Purpose-built systems. Thoughtful automation. We turn the way you want to work into the way you do.",
-    "مواقع تترك انطباعًا. أنظمة تناسب أعمالك. وأتمتة مدروسة. نحوّل تصوّرك لطريقة العمل إلى تجربة عملية.",
+    "From beautiful websites and custom software to powerful business systems and intelligent automation, RatqAI turns ambitious ideas into practical digital solutions.",
+    "من المواقع المميّزة والبرمجيات المخصّصة إلى أنظمة الأعمال المتكاملة والأتمتة الذكية، تحوّل RatqAI الأفكار الطموحة إلى حلول رقمية عملية.",
   ],
-  heroCTA: ["Explore what’s possible", "اكتشف الإمكانات"],
-  heroSecondary: ["Tell us your idea", "احكِ لنا فكرتك"],
-  heroNote: [
-    "Designed with intent. Engineered around you.",
-    "تصميم هادف. وتطوير يبدأ من احتياجاتك.",
-  ],
-  stageLabel: ["A GLIMPSE OF WHAT WE BUILD", "لمحة عمّا يمكننا بناؤه"],
+  heroCTA: ["Start Your Project", "ابدأ مشروعك"],
+  heroSecondary: ["Explore Our Work", "استكشف أعمالنا"],
+  heroArtLabel: ["THE DETAIL IS THE DIFFERENCE.", "الفرق تصنعه التفاصيل."],
   concept: ["Concept / Demo", "تصوّر / تجربة توضيحية"],
-  restaurantMicro: ["AMMAN · MODERN LEVANTINE", "عمّان · مذاق شرقي معاصر"],
-  restaurantHero: [
-    "A table.<br>A story.<br>A little saffron.",
-    "طاولة.<br>حكاية.<br>ولمسة زعفران.",
+  designReview: ["Design review", "مراجعة التصميم"],
+  projectSpace: ["PROJECT SPACE / FORMA", "مساحة المشروع / FORMA"],
+  reviewHeadline: ["An idea, taking shape.", "فكرة، تتّضح ملامحها."],
+  storeCollection: ["Everyday collection", "تشكيلة كل يوم"],
+  storeSeason: ["A NEW PERSPECTIVE", "منظور جديد"],
+  storeTitle: ["Less.<br>But better.", "أقلّ.<br>باختيار أجمل."],
+  storeEdit: ["Discover the edit —", "استكشف التشكيلة —"],
+  screenReady: [
+    "Homepage · Ready for review",
+    "الصفحة الرئيسية · جاهزة للمراجعة",
   ],
-  restaurantBook: ["Find your table ↗", "اختر طاولتك ↗"],
-  enrollmentLabel: ["ENROLLMENT PREVIEW", "تصوّر لتجربة التسجيل"],
-  ticketTitle: ["A clearer start to learning.", "بداية أوضح لرحلة التعلّم."],
-  ticketBody: ["Application → review → welcome", "طلب تسجيل · مراجعة · ترحيب"],
-  stageFoot: [
-    "Different industries. The same attention to detail.",
-    "قطاعات مختلفة. والعناية ذاتها بالتفاصيل.",
+  craftDetail: ["DESIGN + DEVELOPMENT", "تصميم + تطوير"],
+  heroArtCaption: [
+    "Considered on the surface. Carefully engineered underneath.",
+    "عناية بالتجربة الظاهرة. وإتقان في التفاصيل خلفها.",
   ],
-  ribbonLead: ["YOUR INDUSTRY. NEW POSSIBILITIES.", "قطاعك. وإمكانات جديدة."],
-  industries: [
-    "Hospitality <i>·</i> Education <i>·</i> Retail <i>·</i> Real estate <i>·</i> Professional services",
-    "الضيافة <i>·</i> التعليم <i>·</i> التجزئة <i>·</i> العقارات <i>·</i> الخدمات المهنية",
+  heroFoot: [
+    "An independent studio. A business-first perspective.",
+    "استوديو مستقل. يبدأ بفهم الأعمال.",
   ],
-  workLabel: [
-    "01 / POSSIBILITIES, MADE TANGIBLE",
-    "01 / إمكانات تراها وتجرّبها",
-  ],
-  workTitle: [
-    "Don’t just imagine it.<br><em>Step inside.</em>",
-    "لا تتخيّل فقط.<br><em>اكتشف التجربة.</em>",
-  ],
-  workCopy: [
-    "A restaurant with a better first impression. An academy with a simpler day. A business with room to grow. Explore what thoughtful technology can look like.",
-    "مطعم بحضور يليق به. أكاديمية بيوم عمل أبسط. وشركة تتهيّأ للنمو. اكتشف كيف تبدو التقنية حين تُصمَّم بعناية.",
-  ],
-  workDisclaimer: [
-    "All examples are fictional Concept / Demo experiences, not client projects or results.",
-    "جميع الأمثلة تصوّرات توضيحية لعلامات خيالية، وليست مشاريع عملاء أو نتائج فعلية.",
-  ],
-  diningCategory: ["01 / RESTAURANTS & CAFÉS", "01 / المطاعم والمقاهي"],
-  diningTitle: [
-    "Make the first impression<br>before the first course.",
-    "الانطباع الأول،<br>قبل الطبق الأول.",
-  ],
-  diningCopy: [
-    "An inviting website, a considered menu, and a simple path to a reservation. Bring your hospitality to every screen.",
-    "موقع يستقبل الزائر بذوق، وقائمة طعام واضحة، وطريق بسيط لحجز طاولة. اجعل ضيافتك حاضرة على كل شاشة.",
-  ],
-  diningFeatures: [
-    "Brand experience / Digital menu / Reservations",
-    "تجربة العلامة / قائمة رقمية / حجوزات",
-  ],
-  exploreDemo: ["Explore the concept", "اكتشف التصوّر"],
-  academyCategory: ["02 / SCHOOLS & ACADEMIES", "02 / المدارس والأكاديميات"],
-  academyTitle: [
-    "More learning.<br><em>Less admin.</em>",
-    "تعلّم أكثر.<br><em>وأعباء أقل.</em>",
-  ],
-  academyCopy: [
-    "Give prospective students a clear path to enrollment. Give your team one considered workspace for applications, classes, and the next conversation.",
-    "امنح الطلاب الجدد طريقًا واضحًا للتسجيل، وفريقك مساحة عمل منظّمة للطلبات والصفوف والتواصل القادم.",
-  ],
-  academyTag1: ["Student enrollment", "تسجيل الطلاب"],
-  academyTag2: ["Management workspace", "مساحة عمل للإدارة"],
-  openWorkspace: ["Open the workspace", "افتح مساحة العمل"],
-  sampleData: [
-    "Concept / Demo · Illustrative data",
-    "تصوّر / تجربة توضيحية · بيانات افتراضية",
-  ],
-  retailCategory: [
-    "03 / RETAIL & ECOMMERCE",
-    "03 / التجزئة والتجارة الإلكترونية",
-  ],
-  retailTitle: [
-    "Beautiful to browse.<br>Simple to run.",
-    "تسوّق ممتع.<br>وإدارة أبسط.",
-  ],
-  retailCopy: [
-    "A distinctive storefront paired with a practical view of products, inventory, and orders. An experience that considers both sides of the counter.",
-    "واجهة متجر مميّزة، ورؤية عملية للمنتجات والمخزون والطلبات. تجربة تراعي العميل وفريق العمل معًا.",
-  ],
-  retailFeatures: [
-    "Online storefront / Product discovery / Order management",
-    "متجر إلكتروني / استكشاف المنتجات / إدارة الطلبات",
-  ],
-  propertyCategory: ["04 / REAL ESTATE", "04 / العقارات"],
-  propertyTitle: [
-    "Spaces worth<br>a closer look.",
-    "مساحات تستحقّ<br>نظرة أقرب.",
-  ],
-  propertyCopy: [
-    "Property discovery with useful filters, rich details, and an easy path to an inquiry.",
-    "استكشاف للعقارات بفلاتر مفيدة وتفاصيل واضحة وخطوة سهلة للاستفسار.",
-  ],
-  exploreProperties: ["Explore the properties", "استكشف العقارات"],
-  crmCategory: [
-    "05 / SERVICES & BUSINESS OPERATIONS",
-    "05 / الخدمات وعمليات الأعمال",
-  ],
-  crmTitle: [
-    "Every inquiry.<br>A thoughtful next step.",
-    "كل استفسار.<br>وخطوة تالية مدروسة.",
-  ],
-  crmCopy: [
-    "A focused CRM that helps your team follow conversations, assign ownership, and spend less time on routine follow-ups.",
-    "نظام لإدارة علاقات العملاء يساعد فريقك على متابعة المحادثات وتوزيع المسؤوليات وتقليل المتابعات الروتينية.",
-  ],
-  exploreCRM: ["Explore the CRM", "اكتشف إدارة العملاء"],
-  servicesLabel: ["02 / OUR EXPERTISE", "02 / خبراتنا"],
+  heroScope: ["WEBSITES / SOFTWARE / AUTOMATION", "مواقع / برمجيات / أتمتة"],
+  servicesLabel: ["01 / OUR EXPERTISE", "01 / خبراتنا"],
   servicesTitle: [
-    "The experience.<br><em>And the engineering.</em>",
-    "التجربة.<br><em>وما يجعلها تعمل.</em>",
+    "Built around<br><em>your business.</em>",
+    "نبني حول<br><em>احتياجات أعمالك.</em>",
   ],
   servicesCopy: [
-    "From the first screen to the work behind it, we build around what your business actually needs.",
-    "من الشاشة الأولى إلى العمل خلفها، نبني ما تحتاجه أعمالك فعلًا.",
+    "A beautiful first impression is only the beginning. We bring design, software, and business thinking together to build what comes next.",
+    "الانطباع الجميل هو البداية فقط. نجمع التصميم والبرمجيات وفهم الأعمال لنبني خطوتك القادمة.",
   ],
-  approachLabel: [
-    "03 / A CONSIDERED WAY FORWARD",
-    "03 / خطوات مدروسة نحو الأمام",
+  expertiseNote: [
+    "A considered approach, from the first screen to the work behind it.",
+    "منهج مدروس، من الشاشة الأولى إلى العمل خلفها.",
   ],
-  approachTitle: [
-    "Good work starts<br>with understanding.",
-    "العمل المتقن يبدأ<br>بالفهم.",
+  workLabel: ["02 / SELECTED CONCEPTS", "02 / تصوّرات مختارة"],
+  workTitle: [
+    "Made to be seen.<br><em>Built to be used.</em>",
+    "تجارب تلفت النظر.<br><em>وتخدم المستخدم.</em>",
   ],
-  approachCopy: [
-    "RatqAI is an independent digital solutions studio. We bring business understanding, clear design, and practical engineering to the same conversation.",
-    "RatqAI استوديو مستقل للحلول الرقمية. نجمع فهم الأعمال ووضوح التصميم والتطوير العملي في حوار واحد.",
+  workCopy: [
+    "Two different businesses. The same care for the people using them. A closer look at what we can create.",
+    "نشاطان مختلفان، والعناية ذاتها بالمستخدم. نظرة أقرب إلى ما يمكننا بناؤه.",
   ],
-  contactLabel: ["04 / YOUR NEXT CHAPTER", "04 / خطوتك القادمة"],
+  workDisclaimer: [
+    "Fictional Concept / Demo experiences. Not delivered client projects.",
+    "تصوّرات توضيحية لعلامات خيالية، وليست مشاريع منفّذة لعملاء.",
+  ],
+  diningCategory: [
+    "HOSPITALITY / WEBSITE & RESERVATIONS",
+    "الضيافة / موقع وحجوزات",
+  ],
+  diningCopy: [
+    "Warm hospitality, translated into a distinctive website, seasonal menu, and effortless reservation experience.",
+    "ضيافة دافئة تتجلّى في موقع مميّز وقائمة موسمية وتجربة حجز سهلة.",
+  ],
+  academyCategory: [
+    "EDUCATION / ENROLLMENT & MANAGEMENT",
+    "التعليم / التسجيل والإدارة",
+  ],
+  academyCopy: [
+    "A calmer workspace for applications, students, and the next conversation. Less friction for everyone.",
+    "مساحة عمل أوضح للطلبات والطلاب والتواصل القادم. مهام أبسط للجميع.",
+  ],
+  viewConcept: ["Explore concept", "استكشف التصوّر"],
+  portfolioBridge: [
+    "Different industries.<br>The same attention to detail.",
+    "قطاعات مختلفة.<br>والعناية ذاتها بالتفاصيل.",
+  ],
+  allConcepts: ["Explore all five concepts", "استكشف التصوّرات الخمسة"],
+  portfolioIndustries: [
+    "HOSPITALITY · EDUCATION · RETAIL · PROPERTY · SERVICES",
+    "الضيافة · التعليم · التجزئة · العقارات · الخدمات",
+  ],
+  whyLabel: ["03 / WHY RATQAI", "03 / لماذا RatqAI"],
+  whyTitle: [
+    "Good technology.<br><em>Grounded in your reality.</em>",
+    "تقنية مدروسة.<br><em>تنطلق من واقع أعمالك.</em>",
+  ],
+  whyCopy: [
+    "We start with how your business works, not a template. Then shape the right experience and the right engineering around it.",
+    "نبدأ بفهم طريقة عملك، لا بقالب جاهز. ثم نصمّم التجربة والتطوير المناسبين لها.",
+  ],
+  approachLabel: ["04 / OUR PROCESS", "04 / خطواتنا"],
+  approachTitle: ["Clarity, at every step.", "وضوح، في كل خطوة."],
+  contactLabel: ["05 / START A PROJECT", "05 / ابدأ مشروعك"],
   contactTitle: [
-    "Let’s build<br><em>something<br>that matters.</em>",
-    "لنبنِ معًا<br><em>شيئًا<br>يصنع فرقًا.</em>",
+    "Your next chapter<br><em>starts here.</em>",
+    "خطوتك القادمة<br><em>تبدأ هنا.</em>",
   ],
   contactCopy: [
-    "A new idea, an existing challenge, or a better way to work. Tell us where you want to go.",
-    "فكرة جديدة، أو تحدٍّ قائم، أو طريقة أفضل للعمل. أخبرنا إلى أين تطمح.",
+    "A new idea or a better way to work. Tell us what you have in mind. We’ll help you find a practical way forward.",
+    "فكرة جديدة أو طريقة أفضل للعمل. أخبرنا بما تفكّر به، ولنبحث معًا عن خطوة عملية للأمام.",
   ],
-  formName: ["Your name", "اسمك"],
-  formEmail: ["Email address", "البريد الإلكتروني"],
-  formCompany: ["Company / brand", "الشركة / العلامة"],
-  formService: ["What do you have in mind?", "ما الذي تفكّر به؟"],
-  formIndustry: ["Your industry", "قطاع أعمالك"],
-  formMessage: [
-    "Tell us a little about your project",
-    "أخبرنا قليلًا عن مشروعك",
-  ],
-  formSubmit: ["Prepare project inquiry", "جهّز رسالة المشروع"],
+  formName: ["Name", "الاسم"],
+  formEmail: ["Email", "البريد الإلكتروني"],
+  formCompany: ["Business name (optional)", "اسم النشاط التجاري (اختياري)"],
+  formService: ["Project type", "نوع المشروع"],
+  formBudget: ["Budget range (optional)", "الميزانية المتوقّعة (اختياري)"],
+  formMessage: ["A little about your project", "نبذة عن مشروعك"],
+  formSubmit: ["Prepare Your Inquiry", "جهّز رسالتك"],
   formNote: [
-    "This prepares an email in your email app. Your details are not stored on this website.",
-    "يجهّز هذا النموذج رسالة في تطبيق بريدك. لا تُحفظ بياناتك على الموقع.",
+    "We’ll prepare an email draft for you to review and send in your email app. Nothing is submitted or stored here.",
+    "نجهّز مسودة رسالة لتراجعها وترسلها عبر تطبيق بريدك. لا تُرسل أو تُحفظ بياناتك هنا.",
   ],
-  openEmail: ["Open your email app ↗", "افتح تطبيق البريد ↗"],
+  openEmail: ["Review email draft ↗", "راجع مسودة الرسالة ↗"],
   footerLine: [
-    "Thoughtful technology.<br>Practical outcomes.",
-    "تقنية مدروسة.<br>نتائج عملية.",
+    "Thoughtful technology. Practical outcomes.",
+    "تقنية مدروسة. نتائج عملية.",
   ],
   backTop: ["Back to top", "العودة للأعلى"],
   rights: ["All rights reserved.", "جميع الحقوق محفوظة."],
-  footerNote: ["Websites. Systems. Possibilities.", "مواقع. أنظمة. إمكانات."],
   demoNotice: [
-    "A fictional, interactive front-end sample. No bookings, orders, or applications are sent or saved.",
-    "نموذج تفاعلي خيالي للواجهة فقط. لا تُرسل أو تُحفظ حجوزات أو طلبات شراء أو تسجيل.",
+    "Fictional interactive preview. Nothing is sent, booked, or purchased.",
+    "تجربة تفاعلية خيالية. لا إرسال فعلي أو حجز أو شراء.",
+  ],
+  galleryLabel: ["THE CONCEPT COLLECTION", "معرض التصوّرات"],
+  galleryTitle: [
+    "Different businesses.<br><em>Considered experiences.</em>",
+    "أعمال مختلفة.<br><em>وتجارب مدروسة.</em>",
+  ],
+  galleryCopy: [
+    "Explore five fictional product concepts across hospitality, education, retail, property, and professional services. Each is a starting point for a conversation, not a claim of delivered client work.",
+    "استكشف خمسة تصوّرات خيالية في الضيافة والتعليم والتجزئة والعقارات والخدمات المهنية. كلّ منها نقطة بداية للنقاش، وليس ادّعاءً بمشروع منفّذ لعميل.",
+  ],
+  galleryCTA: ["Build something for your business", "لنبنِ ما يناسب أعمالك"],
+  filterAll: ["All concepts", "كل التصوّرات"],
+  filterWeb: ["Websites & commerce", "المواقع والتجارة"],
+  filterSystems: ["Systems & operations", "الأنظمة والعمليات"],
+  galleryEnd: [
+    "What could this look like<br><em>for your business?</em>",
+    "كيف يمكن أن تبدو التجربة<br><em>في أعمالك؟</em>",
   ],
 };
 const SERVICES = [
   [
-    "Websites & digital experiences",
-    "المواقع والتجارب الرقمية",
-    "Give your business a clear, distinctive presence that makes the next step easy.",
-    "حضور واضح ومميّز لأعمالك، يسهّل على العميل اتخاذ الخطوة التالية.",
-    "↗",
+    "Websites & Landing Pages",
+    "المواقع وصفحات الهبوط",
+    "A distinctive digital presence that explains your offer and makes the next step clear.",
+    "حضور رقمي مميّز يشرح ما تقدّمه ويسهّل الخطوة التالية للعميل.",
   ],
   [
-    "Ecommerce",
-    "التجارة الإلكترونية",
-    "Help customers discover, choose, and buy. Give your team a practical way to manage the store.",
-    "ساعد العملاء على الاستكشاف والاختيار والشراء، وفريقك على إدارة المتجر بوضوح.",
-    "＋",
+    "E-commerce Development",
+    "تطوير التجارة الإلكترونية",
+    "Thoughtful storefronts, useful product discovery, and a practical way to manage orders.",
+    "متاجر مدروسة، واستكشاف أسهل للمنتجات، وإدارة عملية للطلبات.",
   ],
   [
-    "Bespoke business systems",
-    "أنظمة أعمال مخصّصة",
-    "Replace scattered spreadsheets with focused tools for your actual processes.",
-    "استبدل الجداول المتفرّقة بأدوات مركّزة تناسب إجراءات عملك الفعلية.",
-    "◫",
+    "Custom Software & Business Systems",
+    "البرمجيات المخصّصة وأنظمة الأعمال",
+    "Focused tools for your processes, built to replace scattered spreadsheets and manual work.",
+    "أدوات تناسب إجراءات عملك، وتقلّل الجداول المتفرّقة والعمل اليدوي.",
   ],
   [
-    "Mobile applications",
-    "تطبيقات الجوال",
-    "Put booking, service access, or everyday tasks directly in your customers’ hands.",
-    "اجعل الحجز والخدمات والمهام اليومية في متناول عملائك أينما كانوا.",
-    "▯",
+    "Web & Mobile Applications",
+    "تطبيقات الويب والجوال",
+    "Booking, service delivery, and everyday tasks brought closer to the people who need them.",
+    "حجز وخدمات ومهام يومية أقرب إلى الأشخاص الذين يحتاجونها.",
   ],
   [
-    "Automation & applied AI",
-    "الأتمتة والذكاء الاصطناعي",
-    "Reduce repetitive work with deliberate workflows and AI where it adds practical value.",
-    "قلّل العمل المتكرّر بإجراءات مدروسة وذكاء اصطناعي يضيف قيمة عملية.",
-    "✳",
+    "Workflow Automation & AI",
+    "أتمتة الأعمال والذكاء الاصطناعي",
+    "Reduce repetitive tasks with deliberate workflows and AI where it adds real practical value.",
+    "قلّل المهام المتكرّرة بإجراءات مدروسة وذكاء اصطناعي يضيف قيمة عملية.",
   ],
   [
-    "APIs & integrations",
-    "واجهات برمجية وتكاملات",
-    "Let your existing tools exchange information, with less re-entry and fewer disconnected tasks.",
-    "دع أدواتك الحالية تتبادل البيانات، مع إدخال يدوي أقل ومهام أكثر ترابطًا.",
-    "↔",
+    "API Integration & Technology Consulting",
+    "التكاملات البرمجية والاستشارات التقنية",
+    "Connect the tools you rely on, and make clearer decisions about the technology ahead.",
+    "اربط الأدوات التي تعتمد عليها واتخذ قرارات تقنية أوضح لخطوتك القادمة.",
   ],
 ];
 const PROCESS = [
   [
-    "Understand",
-    "نفهم",
-    "Your goals, your users, and how the work happens today.",
-    "أهدافك، ومستخدموك، وكيف يجري العمل اليوم.",
+    "Discover",
+    "نكتشف",
+    "Understand your goals, users, and how the work happens.",
+    "نفهم أهدافك ومستخدميك وطريقة سير العمل.",
   ],
   [
-    "Shape",
+    "Design",
     "نصمّم",
-    "A clear scope and a design direction you can see and discuss.",
-    "نطاق واضح واتجاه تصميم يمكنك رؤيته ومناقشته.",
+    "Shape a clear direction you can see, test, and discuss.",
+    "نرسم اتجاهًا واضحًا يمكنك رؤيته وتجربته ومناقشته.",
   ],
   [
-    "Build",
+    "Develop",
     "نطوّر",
-    "Careful engineering, useful feedback, and testing along the way.",
-    "تطوير متقن، وملاحظات مفيدة، واختبارات خلال التنفيذ.",
+    "Build with care, useful feedback, and focused testing.",
+    "نبني بعناية، مع ملاحظات مفيدة واختبارات هادفة.",
   ],
   [
-    "Launch & evolve",
-    "نطلق ونحسّن",
-    "A considered handover, a clear launch, and room for what comes next.",
-    "تسليم منظّم، وإطلاق واضح، ومساحة للخطوة القادمة.",
+    "Launch",
+    "نطلق",
+    "A considered handover and a foundation ready to evolve.",
+    "تسليم منظّم وأساس قابل للتطوير مع احتياجاتك.",
+  ],
+];
+const VALUES = [
+  [
+    "Business-first thinking",
+    "فهم الأعمال أولًا",
+    "The goal comes before the tool.",
+    "الغاية قبل الأداة.",
+  ],
+  [
+    "Tailored solutions",
+    "حلول تناسبك",
+    "Your process deserves the right fit.",
+    "حلّ ملائم لطريقة عملك.",
+  ],
+  [
+    "Thoughtful user experience",
+    "تجربة مستخدم مدروسة",
+    "Clarity for the people using it.",
+    "وضوح لمن يستخدمون الحلّ.",
+  ],
+  [
+    "Architecture that can evolve",
+    "بنية قابلة للتطوّر",
+    "Room for your next step.",
+    "مساحة لخطوتك التالية.",
+  ],
+  [
+    "Clear communication",
+    "تواصل واضح",
+    "Shared expectations from the start.",
+    "توقّعات واضحة منذ البداية.",
   ],
 ];
 let lang = "en",
@@ -261,6 +257,7 @@ let lang = "en",
   activeDemo = null,
   toastTimer,
   observer;
+let galleryFilter = "all";
 const demoState = { booking: false, enrolled: false, crmMoved: false };
 const $ = (s) => document.querySelector(s);
 const t = (en, ar) => (lang === "ar" ? ar : en);
@@ -275,14 +272,14 @@ const escapeHTML = (value) =>
 const browserBar = (name) =>
   `<div class="demo-browser"><span class="window-dots" aria-hidden="true">● ● ●</span><span dir="ltr">${name}</span><span class="concept-tag">${t("Concept / Demo", "تصوّر / تجربة")}</span></div>`;
 function diningUI() {
-  return `${browserBar("saffron.house / dining")}<div class="saffron-ui"><div class="saffron-photo"><img src="assets/dining.jpg" loading="lazy" alt="${t("Illustrative fine dining interior", "صورة توضيحية لمطعم راقٍ")}" width="1400" height="933"><div class="saffron-title"><span class="sample-brand" dir="ltr">saffron house</span><h4>${t("Good food.<br>Better company.", "مذاق طيّب.<br>وصحبة أجمل.")}</h4><span class="sample-micro">${t("A CONTEMPORARY LEVANTINE TABLE", "مائدة شرقية بروح معاصرة")}</span></div></div><div class="saffron-menu"><span class="sample-micro">${t("FROM OUR KITCHEN", "من مطبخنا")}</span><h4>${t("Seasonal. Simple. Shared.", "موسمي. بسيط. يجمعنا.")}</h4><div class="menu-line"><div>${t("Roasted cauliflower", "قرنبيط مشوي")}<small>${t("Tahini, herbs, pomegranate", "طحينة، أعشاب، رمّان")}</small></div><b>7 ${t("JOD", "د.أ")}</b></div><div class="menu-line"><div>${t("Saffron chicken", "دجاج بالزعفران")}<small>${t("Freekeh, lemon, toasted almonds", "فريكة، ليمون، لوز محمّص")}</small></div><b>14 ${t("JOD", "د.أ")}</b></div><div class="menu-line"><div>${t("Pistachio & rose", "فستق وورد")}<small>${t("Milk pudding, seasonal fruit", "مهلبية، فاكهة موسمية")}</small></div><b>6 ${t("JOD", "د.أ")}</b></div><button class="sample-button" data-demo="dining">${t("Reserve a table", "احجز طاولة")} <span>↗</span></button></div></div>`;
+  return `${browserBar("saffron.house / hospitality")}<div class="saffron-ui"><div class="saffron-site-nav"><b class="sample-brand" dir="ltr">saffron house</b><span>${t("Our table / The menu / Our story", "مائدتنا / القائمة / حكايتنا")}</span><button class="sample-button" data-demo="dining">${t("Reserve a table", "احجز طاولة")} ↗</button></div><div class="saffron-photo"><img src="assets/dining.webp" loading="lazy" alt="${t("Illustrative dining photography", "صورة توضيحية لتجربة طعام")}" width="1400" height="933"><div class="saffron-title"><span class="sample-micro">${t("AMMAN / A CONTEMPORARY LEVANTINE TABLE", "عمّان / مائدة شرقية بروح معاصرة")}</span><h4>${t("Good food.<br>Better company.", "مذاق طيّب.<br>وصحبة أجمل.")}</h4><p>${t("Seasonal ingredients. Familiar warmth. A table worth gathering around.", "مكوّنات موسمية. ودفء مألوف. ومائدة تستحقّ أن نجتمع حولها.")}</p><button class="sample-button" data-demo="dining">${t("Find your table", "اختر طاولتك")} ↗</button></div></div><div class="saffron-menu"><span class="sample-micro">${t("FROM OUR KITCHEN", "من مطبخنا")}</span><h4>${t("Seasonal. Simple. Shared.", "موسمي. بسيط. يجمعنا.")}</h4><div class="menu-line"><div>${t("Roasted cauliflower", "قرنبيط مشوي")}<small>${t("Tahini, herbs, pomegranate", "طحينة، أعشاب، رمّان")}</small></div><b>7 ${t("JOD", "د.أ")}</b></div><div class="menu-line"><div>${t("Saffron chicken", "دجاج بالزعفران")}<small>${t("Freekeh, lemon, toasted almonds", "فريكة، ليمون، لوز محمّص")}</small></div><b>14 ${t("JOD", "د.أ")}</b></div><div class="menu-line"><div>${t("Pistachio & rose", "فستق وورد")}<small>${t("Milk pudding, seasonal fruit", "مهلبية، فاكهة موسمية")}</small></div><b>6 ${t("JOD", "د.أ")}</b></div><button class="sample-button" data-demo="dining">${t("Reserve a table", "احجز طاولة")} <span>↗</span></button></div></div>`;
 }
 function academyUI() {
-  return `${browserBar("noura / academy workspace")}<div class="noura-ui"><aside class="noura-sidebar"><b class="sample-brand" dir="ltr">noura.</b><span class="sidebar-item selected">${t("Overview", "نظرة عامة")}</span><span class="sidebar-item">${t("Applications", "طلبات التسجيل")}</span><span class="sidebar-item">${t("Students", "الطلاب")}</span><span class="sidebar-item">${t("Classes", "الصفوف")}</span><small>${t("ACADEMY WORKSPACE<br>ILLUSTRATIVE DATA", "مساحة عمل أكاديمية<br>بيانات افتراضية")}</small></aside><div class="noura-main"><div class="workspace-heading"><div><span class="sample-micro">${t("A NEW DAY TO MAKE A DIFFERENCE", "يوم جديد لنصنع فرقًا")}</span><h4>${t("Good morning, Noura.", "صباح الخير، نورا.")}</h4></div><span class="avatar">NA</span></div><div class="metric-row"><div class="metric"><span>${t("Active students", "الطلاب المسجّلون")}</span><b>${demoState.enrolled ? "249" : "248"}</b><small>${t("Current term · sample", "الفصل الحالي · افتراضي")}</small></div><div class="metric"><span>${t("Applications", "طلبات التسجيل")}</span><b>${demoState.enrolled ? "19" : "18"}</b><small>${t("Awaiting review", "بانتظار المراجعة")}</small></div><div class="metric"><span>${t("Classes today", "صفوف اليوم")}</span><b>12</b><small>${t("Across 4 programs", "ضمن 4 برامج")}</small></div></div><div class="workspace-table"><div class="table-title">${t("Recent applications", "أحدث طلبات التسجيل")}<span>${t("Autumn term", "الفصل الخريفي")}</span></div><table class="sample-table"><thead><tr><th>${t("Student", "الطالب")}</th><th>${t("Program", "البرنامج")}</th><th>${t("Status", "الحالة")}</th></tr></thead><tbody>${demoState.enrolled ? `<tr><td>${t("Demo applicant", "متقدّم تجريبي")}</td><td>${t("English B2", "الإنجليزية B2")}</td><td><span class="tag pending">${t("Review", "للمراجعة")}</span></td></tr>` : ""}<tr><td>${t("Rana K.", "رنا ك.")}</td><td>${t("English B2", "الإنجليزية B2")}</td><td><span class="tag pending">${t("Review", "للمراجعة")}</span></td></tr><tr><td>${t("Adam M.", "آدم م.")}</td><td>${t("Design basics", "أساسيات التصميم")}</td><td><span class="tag">${t("Accepted", "مقبول")}</span></td></tr><tr><td>${t("Leen A.", "لين أ.")}</td><td>${t("English B1", "الإنجليزية B1")}</td><td><span class="tag">${t("Accepted", "مقبول")}</span></td></tr></tbody></table></div><div class="academy-bottom"><img src="assets/campus.jpg" alt="${t("Illustrative students studying together", "صورة توضيحية لطلاب يدرسون معًا")}" loading="lazy" width="1200" height="800"><div><b>${t("Make room for the next generation.", "مساحة أوسع للجيل القادم.")}</b><span>${t("A simpler enrollment experience, from the start.", "تجربة تسجيل أبسط، من البداية.")}</span></div></div></div></div>`;
+  return `${browserBar("noura / academy workspace")}<div class="noura-ui"><aside class="noura-sidebar"><b class="sample-brand" dir="ltr">noura.</b><span class="sidebar-item selected">${t("Overview", "نظرة عامة")}</span><span class="sidebar-item">${t("Applications", "طلبات التسجيل")}</span><span class="sidebar-item">${t("Students", "الطلاب")}</span><span class="sidebar-item">${t("Classes", "الصفوف")}</span><small>${t("ACADEMY WORKSPACE<br>ILLUSTRATIVE DATA", "مساحة عمل أكاديمية<br>بيانات افتراضية")}</small></aside><div class="noura-main"><div class="workspace-heading"><div><span class="sample-micro">${t("A NEW DAY TO MAKE A DIFFERENCE", "يوم جديد لنصنع فرقًا")}</span><h4>${t("A clear view of your day.", "يومك، بنظرة أوضح.")}</h4></div><span class="avatar">NA</span></div><div class="metric-row"><div class="metric"><span>${t("Active students", "الطلاب المسجّلون")}</span><b>${"248"}</b><small>${t("Current term · sample", "الفصل الحالي · افتراضي")}</small></div><div class="metric"><span>${t("Applications", "طلبات التسجيل")}</span><b>${demoState.enrolled ? "19" : "18"}</b><small>${t("Awaiting review", "بانتظار المراجعة")}</small></div><div class="metric"><span>${t("Classes today", "صفوف اليوم")}</span><b>12</b><small>${t("Across 4 programs", "ضمن 4 برامج")}</small></div></div><div class="workspace-table"><div class="table-title">${t("Recent applications", "أحدث طلبات التسجيل")}<span>${t("Autumn term", "الفصل الخريفي")}</span></div><table class="sample-table"><thead><tr><th>${t("Student", "الطالب")}</th><th>${t("Program", "البرنامج")}</th><th>${t("Status", "الحالة")}</th></tr></thead><tbody>${demoState.enrolled ? `<tr><td>${t("Demo applicant", "متقدّم تجريبي")}</td><td>${t("English B2", "الإنجليزية B2")}</td><td><span class="tag pending">${t("Review", "للمراجعة")}</span></td></tr>` : ""}<tr><td>${t("Rana K.", "رنا ك.")}</td><td>${t("English B2", "الإنجليزية B2")}</td><td><span class="tag pending">${t("Review", "للمراجعة")}</span></td></tr><tr><td>${t("Adam M.", "آدم م.")}</td><td>${t("Design basics", "أساسيات التصميم")}</td><td><span class="tag">${t("Accepted", "مقبول")}</span></td></tr><tr><td>${t("Leen A.", "لين أ.")}</td><td>${t("English B1", "الإنجليزية B1")}</td><td><span class="tag">${t("Accepted", "مقبول")}</span></td></tr></tbody></table></div><div class="academy-next"><span class="next-icon" aria-hidden="true">▦</span><div><small>${t("NEXT CLASS / 14:00", "الصف القادم / 14:00")}</small><b>${t("English B2 · Room 03", "الإنجليزية B2 · القاعة 03")}</b></div><span>${t("Instructor: Lina H.", "المدرّبة: لينا ح.")}</span></div></div></div>`;
 }
 function retailUI() {
-  return `<div class="demo-frame">${browserBar("forma / everyday essentials")}<div class="retail-ui"><div class="retail-nav"><b class="sample-brand" dir="ltr">FORMA</b><span>${t("THE EVERYDAY COLLECTION", "تشكيلة كل يوم")}</span><button data-action="bag">${t("Bag", "الحقيبة")} (${cart})</button></div><div class="retail-body"><div><span class="sample-micro">${t("LESS, BUT BETTER", "أقلّ، باختيار أجمل")}</span><h4>${t("Everyday.<br>Considered.", "تفاصيل يومية.<br>بعناية.")}</h4><p>${t("A small collection of pieces you’ll reach for, again and again.", "تشكيلة مختارة من القطع التي تحب العودة إليها، كل يوم.")}</p><button class="sample-button" data-demo="retail">${t("Explore the edit", "استكشف التشكيلة")} ↗</button></div><img src="assets/fashion.jpg" alt="${t("Illustrative curated clothing collection", "صورة توضيحية لتشكيلة ملابس مختارة")}" loading="lazy" width="1400" height="933"></div></div></div><div class="inventory-ui"><div class="workspace-heading"><div><span class="sample-micro">${t("FORMA / BACK OFFICE", "FORMA / إدارة المتجر")}</span><h4>${t("Everything in order.", "كل شيء في مكانه.")}</h4></div><span class="avatar">F</span></div><div class="metric-row"><div class="metric"><span>${t("Orders today", "طلبات اليوم")}</span><b>${24 + cart}</b><small>${t("Demo store activity", "نشاط متجر افتراضي")}</small></div><div class="metric"><span>${t("Ready to ship", "جاهز للشحن")}</span><b>16</b><small>${t("Awaiting dispatch", "بانتظار الإرسال")}</small></div></div><span class="sample-micro">${t("INVENTORY SNAPSHOT", "لمحة عن المخزون")}</span>${[
-    [t("Linen shirt", "قميص كتان"), "LN-021", "32", false],
+  return `<div class="demo-frame">${browserBar("forma / everyday essentials")}<div class="retail-ui"><div class="retail-nav"><b class="sample-brand" dir="ltr">FORMA</b><span>${t("THE EVERYDAY COLLECTION", "تشكيلة كل يوم")}</span><button data-action="bag">${t("Bag", "الحقيبة")} (${cart})</button></div><div class="retail-body"><div><span class="sample-micro">${t("LESS, BUT BETTER", "أقلّ، باختيار أجمل")}</span><h4>${t("Everyday.<br>Considered.", "تفاصيل يومية.<br>بعناية.")}</h4><p>${t("A small collection of pieces you’ll reach for, again and again.", "تشكيلة مختارة من القطع التي تحب العودة إليها، كل يوم.")}</p><button class="sample-button" data-demo="retail">${t("Explore the edit", "استكشف التشكيلة")} ↗</button></div><img src="assets/fashion.webp" alt="${t("Illustrative curated clothing collection", "صورة توضيحية لتشكيلة ملابس مختارة")}" loading="lazy" width="1400" height="933"></div></div></div><div class="inventory-ui"><div class="workspace-heading"><div><span class="sample-micro">${t("FORMA / BACK OFFICE", "FORMA / إدارة المتجر")}</span><h4>${t("Everything in order.", "كل شيء في مكانه.")}</h4></div><span class="avatar">F</span></div><div class="metric-row"><div class="metric"><span>${t("Orders today", "طلبات اليوم")}</span><b>${24}</b><small>${t("Demo store activity", "نشاط متجر افتراضي")}</small></div><div class="metric"><span>${t("Ready to ship", "جاهز للشحن")}</span><b>16</b><small>${t("Awaiting dispatch", "بانتظار الإرسال")}</small></div></div><span class="sample-micro">${t("INVENTORY SNAPSHOT", "لمحة عن المخزون")}</span>${[
+    [t("Cotton knit", "قطعة قطن محبوكة"), "KN-021", "32", false],
     [t("Everyday tote", "حقيبة يومية"), "TT-004", "5", true],
     [t("Cotton essential", "قطعة قطن أساسية"), "CT-012", "48", false],
   ]
@@ -297,46 +294,110 @@ function retailUI() {
 function crmUI() {
   return `${browserBar("folio / client workspace")}<div class="crm-ui"><div class="workspace-heading"><div><span class="sample-micro">${t("FOCUS ON THE NEXT CONVERSATION", "التركيز على المحادثة القادمة")}</span><h4>${t("Your pipeline, at a glance.", "فرصك، بنظرة واحدة.")}</h4></div><span class="avatar">F</span></div><div class="pipeline"><div class="pipeline-column"><h5>${t("New", "جديد")} <span>${demoState.crmMoved ? "1" : "2"}</span></h5>${demoState.crmMoved ? "" : `<div class="lead-card"><b>${t("Atlas Studio", "استوديو أطلس")}</b><small>${t("Website inquiry", "استفسار عن موقع")}</small><span>${t("Owner: Lina", "المسؤول: لينا")}</span></div>`}<div class="lead-card"><b>${t("Noor Clinic", "عيادة نور")}</b><small>${t("Booking system", "نظام حجوزات")}</small><span>${t("Owner: Omar", "المسؤول: عمر")}</span></div></div><div class="pipeline-column"><h5>${t("In discussion", "قيد النقاش")} <span>${demoState.crmMoved ? "2" : "1"}</span></h5><div class="lead-card"><b>${t("Bayt Consulting", "بيت للاستشارات")}</b><small>${t("Operations workspace", "مساحة إدارة الأعمال")}</small><span>${t("Owner: Lina", "المسؤول: لينا")}</span></div>${demoState.crmMoved ? `<div class="lead-card"><b>${t("Atlas Studio", "استوديو أطلس")}</b><small>${t("Website inquiry", "استفسار عن موقع")}</small><span>${t("Owner: Lina", "المسؤول: لينا")}</span></div>` : ""}</div><div class="pipeline-column"><h5>${t("Proposal", "عرض سعر")} <span>1</span></h5><div class="lead-card"><b>${t("Madar Partners", "مدار وشركاؤه")}</b><small>${t("Client portal", "بوابة العملاء")}</small><span>${t("Owner: Omar", "المسؤول: عمر")}</span></div></div></div><div class="automation-note"><b aria-hidden="true">✓</b><span>${t("Reminder prepared: follow up with Bayt Consulting tomorrow.", "تذكير جاهز: متابعة بيت للاستشارات غدًا.")}<br><small>${t("Illustrative automation · nothing sent", "أتمتة توضيحية · لم يتم الإرسال")}</small></span></div></div>`;
 }
+
 function refreshSamples() {
-  $("#dining-preview").innerHTML = diningUI();
-  $("#academy-preview").innerHTML = academyUI();
-  $("#retail-preview").innerHTML = retailUI();
-  $("#crm-preview").innerHTML = crmUI();
+  if ($("#dining-preview")) $("#dining-preview").innerHTML = diningUI();
+  if ($("#academy-preview")) $("#academy-preview").innerHTML = academyUI();
+  if ($("#concept-grid")) renderGallery();
 }
 function renderServices() {
+  if (!$("#service-list")) return;
+  const open = [...document.querySelectorAll(".expertise-item")].findIndex(
+    (el) => el.open,
+  );
   $("#service-list").innerHTML = SERVICES.map(
     (s, i) =>
-      `<article class="service-row reveal"><span class="service-index">0${i + 1}</span><h3>${t(s[0], s[1])}</h3><p>${t(s[2], s[3])}</p><span class="service-symbol" aria-hidden="true">${s[4]}</span></article>`,
+      `<details class="expertise-item" name="expertise" ${i === (open < 0 ? 0 : open) ? "open" : ""}><summary><span class="service-index">0${i + 1}</span><h3>${t(s[0], s[1])}</h3><span class="detail-sign" aria-hidden="true">＋</span></summary><p>${t(s[2], s[3])}</p></details>`,
   ).join("");
   $("#process-steps").innerHTML = PROCESS.map(
     (s, i) =>
       `<article class="process-step reveal"><span>0${i + 1}</span><h3>${t(s[0], s[1])}</h3><p>${t(s[2], s[3])}</p></article>`,
   ).join("");
+  $("#value-list").innerHTML = VALUES.map(
+    (s) =>
+      `<div class="value-row"><h3>${t(s[0], s[1])}</h3><p>${t(s[2], s[3])}</p></div>`,
+  ).join("");
 }
 function options() {
   const a = $("#project-service"),
-    b = $("#project-industry"),
-    av = a.value,
+    b = $("#project-budget");
+  if (!a) return;
+  const av = a.value,
     bv = b.value;
   a.innerHTML =
     `<option value="">${t("Let’s explore together", "لنستكشف معًا")}</option>` +
     SERVICES.map(
       (s) => `<option value="${s[0]}">${t(s[0], s[1])}</option>`,
     ).join("");
-  b.innerHTML =
-    `<option value="">${t("Select your industry", "اختر قطاعك")}</option>` +
-    [
-      ["Restaurants & cafés", "المطاعم والمقاهي"],
-      ["Schools & academies", "المدارس والأكاديميات"],
-      ["Retail & ecommerce", "التجزئة والتجارة الإلكترونية"],
-      ["Real estate", "العقارات"],
-      ["Professional services", "الخدمات المهنية"],
-      ["Other", "قطاع آخر"],
-    ]
-      .map((s) => `<option value="${s[0]}">${t(s[0], s[1])}</option>`)
-      .join("");
+  b.innerHTML = [
+    ["", "Let’s discuss", "لنناقشها معًا"],
+    ["under-1000", "Under JOD 1,000", "أقل من 1,000 د.أ"],
+    ["1000-3000", "JOD 1,000–3,000", "1,000–3,000 د.أ"],
+    ["3000-7000", "JOD 3,000–7,000", "3,000–7,000 د.أ"],
+    ["7000-plus", "JOD 7,000+", "أكثر من 7,000 د.أ"],
+  ]
+    .map(([v, en, ar]) => `<option value="${v}">${t(en, ar)}</option>`)
+    .join("");
   a.value = av;
   b.value = bv;
+}
+function renderGallery() {
+  const data = [
+    [
+      "dining",
+      "websites",
+      "Saffron House",
+      t("Restaurant website, menu & reservations", "موقع مطعم وقائمة وحجوزات"),
+      diningUI(),
+    ],
+    [
+      "academy",
+      "systems",
+      "Noura Academy",
+      t(
+        "Student enrollment & academy management",
+        "تسجيل الطلاب وإدارة الأكاديمية",
+      ),
+      academyUI(),
+    ],
+    [
+      "retail",
+      "websites",
+      "Forma",
+      t("Online storefront & order management", "متجر إلكتروني وإدارة الطلبات"),
+      `<div class="retail-composition">${retailUI()}</div>`,
+    ],
+    [
+      "property",
+      "websites",
+      "Darna Properties",
+      t("Property discovery & inquiries", "استكشاف العقارات والاستفسارات"),
+      `<div class="gallery-property"><img src="assets/residence.webp" alt="" loading="lazy" width="1400" height="933"><b dir="ltr">DARNA<span>PROPERTIES</span></b><p>${t("Find your place.", "اكتشف مساحتك.")}</p></div>`,
+    ],
+    [
+      "crm",
+      "systems",
+      "Folio",
+      t(
+        "Client relationships & business operations",
+        "علاقات العملاء وعمليات الأعمال",
+      ),
+      crmUI(),
+    ],
+  ];
+  const visible = data.filter(
+    (d) => galleryFilter === "all" || d[1] === galleryFilter,
+  );
+  $("#concept-grid").innerHTML = visible
+    .map(
+      ([id, type, name, desc, ui]) =>
+        `<article class="concept-card"><div class="concept-thumbnail" aria-hidden="true" inert>${ui}</div><div class="concept-card-caption"><span class="eyebrow">${t("Concept / Demo", "تصوّر / تجربة توضيحية")}</span><h2 dir="ltr">${name}</h2><p>${desc}</p><button data-demo="${id}" class="text-link">${t("Open interactive concept", "افتح التجربة التفاعلية")} ↗</button></div></article>`,
+    )
+    .join("");
+  $("#gallery-count").textContent = t(
+    `${visible.length} concepts · fictional businesses and sample data`,
+    `${visible.length} تصوّرات · علامات خيالية وبيانات افتراضية`,
+  );
 }
 function observeReveals() {
   if (observer) observer.disconnect();
@@ -348,15 +409,14 @@ function observeReveals() {
     return;
   }
   observer = new IntersectionObserver(
-    (entries) => {
+    (entries) =>
       entries.forEach((e) => {
         if (e.isIntersecting) {
           e.target.classList.add("visible");
           observer.unobserve(e.target);
         }
-      });
-    },
-    { threshold: 0.08 },
+      }),
+    { threshold: 0.12 },
   );
   document
     .querySelectorAll(".reveal:not(.visible)")
@@ -368,8 +428,7 @@ function setLanguage(next) {
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   document.querySelectorAll("[data-i18n]").forEach((el) => {
-    const pair = COPY[el.dataset.i18n];
-    if (pair) el.innerHTML = t(...pair);
+    if (COPY[el.dataset.i18n]) el.innerHTML = t(...COPY[el.dataset.i18n]);
   });
   $("#langToggle").textContent = t("العربية", "English");
   $("#langToggle").setAttribute(
@@ -388,21 +447,49 @@ function setLanguage(next) {
     "aria-label",
     t("Close preview", "إغلاق التجربة"),
   );
-  $(".hero-stage").setAttribute(
+  document
+    .querySelectorAll(".wordmark")
+    .forEach((a) =>
+      a.setAttribute("aria-label", t("RatqAI home", "RatqAI الرئيسية")),
+    );
+  $(".store-composition img")?.setAttribute(
+    "alt",
+    t("Illustrative neutral knitwear", "صورة توضيحية لقطعة ملابس محبوكة"),
+  );
+  $(".hero-art")?.setAttribute(
     "aria-label",
     t(
-      "Fictional restaurant and academy interface previews",
-      "تصوّرات لواجهات مطعم وأكاديمية",
+      "Fictional software design review interface",
+      "تصوّر لواجهة مراجعة تصميم برمجي",
     ),
   );
-  $("#project-form").querySelector("[name=message]").placeholder = t(
-    "What would you like to build or improve?",
-    "ما الذي ترغب في بنائه أو تحسينه؟",
+  document
+    .querySelectorAll('[data-demo="dining"].round-link')
+    .forEach((b) =>
+      b.setAttribute(
+        "aria-label",
+        t("Explore Saffron House concept", "استكشف تجربة مطعم سافرون"),
+      ),
+    );
+  document
+    .querySelectorAll('[data-demo="academy"].round-link')
+    .forEach((b) =>
+      b.setAttribute(
+        "aria-label",
+        t("Explore Noura Academy concept", "استكشف تجربة أكاديمية نورا"),
+      ),
+    );
+  $(".gallery-filters")?.setAttribute(
+    "aria-label",
+    t("Filter concepts", "تصفية التصوّرات"),
   );
-  document.title = t(
-    "RatqAI | Websites, Custom Software & AI Automation",
-    "RatqAI | المواقع والبرمجيات المخصصة والأتمتة بالذكاء الاصطناعي",
-  );
+  const isGallery = document.body.dataset.page === "concepts";
+  document.title = isGallery
+    ? t("Concept Gallery | RatqAI", "معرض التصوّرات | RatqAI")
+    : t(
+        "RatqAI | Websites, Custom Software & AI Automation",
+        "RatqAI | المواقع والبرمجيات المخصصة والأتمتة بالذكاء الاصطناعي",
+      );
   const description = t(
     "RatqAI is a digital solutions studio offering custom software development, professional websites, business workflow automation, and technology consulting.",
     "RatqAI استوديو للحلول الرقمية يقدّم تطوير البرمجيات المخصصة والمواقع الاحترافية وأتمتة عمليات الأعمال والاستشارات التقنية.",
@@ -421,15 +508,21 @@ function setLanguage(next) {
       ).content = description),
   );
   $('meta[property="og:locale"]').content = t("en_US", "ar_AR");
+  const form = $("#project-form");
+  if (form)
+    form.elements.message.placeholder = t(
+      "What would you like to build or improve?",
+      "ما الذي ترغب في بنائه أو تحسينه؟",
+    );
   refreshSamples();
   renderServices();
   options();
   observeReveals();
   if (activeDemo) renderDemo(activeDemo);
-  if (!$("#form-status").hidden)
+  if ($("#form-status") && !$("#form-status").hidden)
     $("#form-status").textContent = t(
-      "Your inquiry is ready. Open your email app to review and send it.",
-      "رسالتك جاهزة. افتح تطبيق البريد لمراجعتها وإرسالها.",
+      "Your draft is ready to review. Nothing has been sent.",
+      "مسودتك جاهزة للمراجعة. لم تُرسل أي رسالة.",
     );
   try {
     localStorage.setItem("ratqai-language", lang);
@@ -464,7 +557,7 @@ function renderDemo(kind) {
     content = `<div class="demo-frame">${academyUI()}</div><div class="demo-controls"><h3>${t("Try the enrollment experience.", "جرّب تجربة التسجيل.")}</h3><p>${t("Add one fictional applicant to the sample workspace.", "أضف متقدّمًا خياليًا واحدًا إلى مساحة العمل.")}</p><button class="sample-button" data-action="enroll" ${demoState.enrolled ? "disabled" : ""}>${demoState.enrolled ? t("Demo application added ✓", "أُضيف الطلب التجريبي ✓") : t("Add a sample application", "أضف طلبًا تجريبيًا")} ↗</button></div>`;
   }
   if (kind === "retail") {
-    content = `<div class="retail-composition">${retailUI()}</div><div class="demo-controls"><h3>${t("A considered everyday essential.", "قطعة يومية، باختيار مدروس.")}</h3><p>${t("Linen shirt · Sand · JOD 45 · Fictional product", "قميص كتان · رملي · 45 د.أ · منتج افتراضي")}</p><div class="demo-form"><label>${t("Size", "المقاس")}<select id="product-size"><option>S</option><option>M</option><option>L</option></select></label><button class="sample-button" data-action="add-cart">${t("Add to demo bag", "أضف للحقيبة التجريبية")} ＋</button></div><p class="demo-output" role="status" id="cart-result">${t("Demo bag", "الحقيبة التجريبية")}: ${cart} · ${t("No checkout or payment", "لا توجد عملية دفع")}</p></div>`;
+    content = `<div class="retail-composition">${retailUI()}</div><div class="demo-controls"><h3>${t("A considered everyday essential.", "قطعة يومية، باختيار مدروس.")}</h3><p>${t("Cotton knit · Sand · JOD 45 · Fictional product", "قطعة قطن محبوكة · رملي · 45 د.أ · منتج افتراضي")}</p><div class="demo-form"><label>${t("Size", "المقاس")}<select id="product-size"><option>S</option><option>M</option><option>L</option></select></label><button class="sample-button" data-action="add-cart">${t("Add to demo bag", "أضف للحقيبة التجريبية")} ＋</button></div><p class="demo-output" role="status" id="cart-result">${t("Demo bag", "الحقيبة التجريبية")}: ${cart} · ${t("No checkout or payment", "لا توجد عملية دفع")}</p></div>`;
   }
   if (kind === "property") {
     content = `<div class="demo-controls"><span class="sample-brand" dir="ltr">DARNA PROPERTIES</span><p>${t("Fictional residences in Amman. Photos are illustrative and do not show actual Jordan listings.", "عقارات خيالية في عمّان. الصور توضيحية ولا تمثّل عقارات فعلية في الأردن.")}</p><div class="demo-chips" role="group" aria-label="${t("Filter property location", "فلترة موقع العقار")}"><button data-filter="all" class="active" aria-pressed="true">${t("All residences", "كل العقارات")}</button><button data-filter="Abdoun" aria-pressed="false">${t("Abdoun", "عبدون")}</button><button data-filter="Khalda" aria-pressed="false">${t("Khalda", "خلدا")}</button></div><p id="property-results" role="status">${t("2 residences", "عقاران")}</p></div><div class="property-demo-grid">${[
@@ -615,6 +708,7 @@ document.addEventListener("click", (e) => {
       break;
   }
 });
+
 $("#langToggle").addEventListener("click", () =>
   setLanguage(lang === "en" ? "ar" : "en"),
 );
@@ -635,33 +729,75 @@ document.addEventListener("keydown", (e) => {
     $("#menu-toggle").setAttribute("aria-expanded", "false");
   }
 });
-$("#project-form").addEventListener("submit", (e) => {
+document.addEventListener("click", (e) => {
+  const filter = e.target.closest("[data-gallery-filter]");
+  if (filter) {
+    galleryFilter = filter.dataset.galleryFilter;
+    document.querySelectorAll("[data-gallery-filter]").forEach((b) => {
+      b.classList.toggle("active", b === filter);
+      b.setAttribute("aria-pressed", String(b === filter));
+    });
+    renderGallery();
+  }
+});
+$("#project-form")?.addEventListener("submit", (e) => {
   e.preventDefault();
   const form = e.currentTarget,
     data = new FormData(form);
-  const subject = `RatqAI project inquiry${data.get("company") ? " — " + data.get("company") : ""}`;
   const body = [
     `${t("Name", "الاسم")}: ${data.get("name")}`,
     `${t("Email", "البريد")}: ${data.get("email")}`,
-    `${t("Company", "الشركة")}: ${data.get("company")}`,
-    `${t("Service", "الخدمة")}: ${$("#project-service").selectedOptions[0].textContent}`,
-    `${t("Industry", "القطاع")}: ${$("#project-industry").selectedOptions[0].textContent}`,
+    `${t("Business", "النشاط")}: ${data.get("company")}`,
+    `${t("Project type", "نوع المشروع")}: ${$("#project-service").selectedOptions[0].textContent}`,
+    `${t("Budget", "الميزانية")}: ${$("#project-budget").selectedOptions[0].textContent}`,
     "",
     data.get("message"),
   ].join("\n");
   const link = $("#mail-draft");
-  link.href = `mailto:hello@ratqai.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  link.href = `mailto:hello@ratqai.com?subject=${encodeURIComponent("RatqAI project inquiry" + (data.get("company") ? " — " + data.get("company") : ""))}&body=${encodeURIComponent(body)}`;
   link.hidden = false;
   $("#form-status").hidden = false;
   $("#form-status").textContent = t(
-    "Your inquiry is ready. Open your email app to review and send it.",
-    "رسالتك جاهزة. افتح تطبيق البريد لمراجعتها وإرسالها.",
+    "Your draft is ready to review. Nothing has been sent.",
+    "مسودتك جاهزة للمراجعة. لم تُرسل أي رسالة.",
   );
   link.focus();
 });
+// One restrained photography movement; no scroll-jacking, no idle animation.
+let ticking = false;
+function updateScroll() {
+  ticking = false;
+  const y = window.scrollY;
+  document.body.classList.toggle("scrolled", y > 30);
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document
+      .querySelectorAll(".case-display .saffron-photo img")
+      .forEach((img) => {
+        const r = img.parentElement.getBoundingClientRect();
+        if (r.bottom > 0 && r.top < innerHeight)
+          img.style.transform = `translateY(${Math.max(-12, Math.min(12, (r.top - innerHeight / 2) * 0.025))}px) scale(1.06)`;
+      });
+  } else
+    document
+      .querySelectorAll(".saffron-photo img")
+      .forEach((img) => (img.style.transform = "none"));
+}
+window.addEventListener(
+  "scroll",
+  () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(updateScroll);
+    }
+  },
+  { passive: true },
+);
 matchMedia("(prefers-reduced-motion: reduce)").addEventListener(
   "change",
-  observeReveals,
+  () => {
+    observeReveals();
+    updateScroll();
+  },
 );
 $("#year").textContent = new Date().getFullYear();
 let initial = "en";

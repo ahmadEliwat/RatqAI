@@ -3399,3 +3399,109 @@ html[dir="rtl"] .hero h1 {
     display: none;
   }
 }
+
+/* Review refinements: visible invitations and service-specific visual context. */
+.hero {
+  grid-template-columns: 1fr;
+}
+.hero-copy {
+  max-width: 850px;
+}
+.service-detail {
+  padding: 0 0 24px 45px;
+}
+.service-detail > p {
+  max-width: 56ch;
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 0 0 22px;
+}
+.service-detail img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 5;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid #d7d0c4;
+  border-radius: 5px;
+  background: #ece8df;
+}
+html[dir="rtl"] .service-detail {
+  padding: 0 45px 24px 0;
+}
+.case-caption .round-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 58px;
+  padding: 10px 22px;
+  background: #152330;
+  color: #fff;
+  border: 1px solid #152330;
+  border-radius: 2px;
+  font-size: 16px;
+  font-weight: 700;
+  white-space: normal;
+}
+.case-caption .round-link > span {
+  font-size: inherit;
+  display: inline;
+}
+.case-caption .round-link > b {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: #d8bd90;
+  color: #101a25;
+  flex-shrink: 0;
+}
+.case-caption .round-link:hover {
+  background: #2a3f50;
+  box-shadow: 0 6px 22px #101a2520;
+}
+.portfolio-bridge .button {
+  background: #152330;
+  color: #fff;
+  border-color: #152330;
+  min-height: 64px;
+  padding: 18px 28px;
+  font-size: 17px;
+  font-weight: 700;
+  box-shadow: 0 8px 20px #101a2515;
+}
+.portfolio-bridge .button:hover {
+  background: #2a3f50;
+}
+.project-form button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+.form-honeypot[hidden] {
+  display: none;
+}
+#form-status {
+  padding: 16px;
+  border-inline-start: 2px solid #d8bd90;
+  background: #ffffff08;
+  line-height: 1.7;
+}
+@media (max-width: 650px) {
+  .service-detail {
+    padding-inline-start: 0;
+  }
+  html[dir="rtl"] .service-detail {
+    padding-inline-end: 0;
+  }
+  .case-caption .round-link,
+  .portfolio-bridge .button {
+    width: 100%;
+  }
+  .case-caption .round-link {
+    margin-block-start: 8px;
+  }
+  .hero-copy {
+    max-width: 100%;
+  }
+}

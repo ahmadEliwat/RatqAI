@@ -1,5 +1,6 @@
 "use strict";
 // Fictional concept samples. No booking, purchase, or application is submitted.
+let inquiryState = "idle";
 const COPY = {
   skip: ["Skip to content", "انتقل إلى المحتوى"],
   navServices: ["Expertise", "خبراتنا"],
@@ -118,14 +119,15 @@ const COPY = {
   ],
   formName: ["Name", "الاسم"],
   formEmail: ["Email", "البريد الإلكتروني"],
+  formPhone: ["Mobile number", "رقم الجوال"],
   formCompany: ["Business name (optional)", "اسم النشاط التجاري (اختياري)"],
   formService: ["Project type", "نوع المشروع"],
   formBudget: ["Budget range (optional)", "الميزانية المتوقّعة (اختياري)"],
   formMessage: ["A little about your project", "نبذة عن مشروعك"],
-  formSubmit: ["Prepare Your Inquiry", "جهّز رسالتك"],
+  formSubmit: ["Send Your Inquiry", "أرسل طلبك"],
   formNote: [
-    "We’ll prepare an email draft for you to review and send in your email app. Nothing is submitted or stored here.",
-    "نجهّز مسودة رسالة لتراجعها وترسلها عبر تطبيق بريدك. لا تُرسل أو تُحفظ بياناتك هنا.",
+    "Your details are shared with RatqAI to respond to your project inquiry.",
+    "تُشارك بياناتك مع RatqAI للتواصل معك بخصوص مشروعك.",
   ],
   openEmail: ["Review email draft ↗", "راجع مسودة الرسالة ↗"],
   footerLine: [
@@ -307,7 +309,7 @@ function renderServices() {
   );
   $("#service-list").innerHTML = SERVICES.map(
     (s, i) =>
-      `<details class="expertise-item" name="expertise" ${i === (open < 0 ? 0 : open) ? "open" : ""}><summary><span class="service-index">0${i + 1}</span><h3>${t(s[0], s[1])}</h3><span class="detail-sign" aria-hidden="true">＋</span></summary><p>${t(s[2], s[3])}</p></details>`,
+      `<details class="expertise-item" name="expertise" ${i === (open < 0 ? 0 : open) ? "open" : ""}><summary><span class="service-index">0${i + 1}</span><h3>${t(s[0], s[1])}</h3><span class="detail-sign" aria-hidden="true">＋</span></summary><div class="service-detail"><p>${t(s[2], s[3])}</p><img src="assets/service-${i + 1}.webp" width="960" height="600" loading="lazy" decoding="async" alt="${t(s[0], s[1])} — ${t("illustrative concept interface", "واجهة تصوّر توضيحي")}"></div></details>`,
   ).join("");
   $("#process-steps").innerHTML = PROCESS.map(
     (s, i) =>
@@ -520,11 +522,7 @@ function setLanguage(next) {
   options();
   observeReveals();
   if (activeDemo) renderDemo(activeDemo);
-  if ($("#form-status") && !$("#form-status").hidden)
-    $("#form-status").textContent = t(
-      "Your draft is ready to review. Nothing has been sent.",
-      "مسودتك جاهزة للمراجعة. لم تُرسل أي رسالة.",
-    );
+  updateFormStatus();
   try {
     localStorage.setItem("ratqai-language", lang);
   } catch {}
@@ -741,28 +739,53 @@ document.addEventListener("click", (e) => {
     renderGallery();
   }
 });
-$("#project-form")?.addEventListener("submit", (e) => {
+
+const inquiryMessages = {
+  sending: ["Sending your inquiry…", "جارٍ إرسال طلبك…"],
+  success: [
+    "Thank you. Your inquiry has been received. We’ll contact you using the details you provided.",
+    "شكرًا لك. تم استلام طلبك، وسنتواصل معك عبر البيانات التي أرسلتها.",
+  ],
+  error: [
+    "Your inquiry could not be sent. Please try again, or email hello@ratqai.com. Your details are still here.",
+    "تعذّر إرسال طلبك. حاول مجددًا أو راسل hello@ratqai.com. بياناتك ما زالت محفوظة في النموذج.",
+  ],
+};
+function updateFormStatus() {
+  const status = $("#form-status");
+  if (!status || inquiryState === "idle") return;
+  status.hidden = false;
+  status.textContent = t(...inquiryMessages[inquiryState]);
+}
+$("#project-form")?.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const form = e.currentTarget,
-    data = new FormData(form);
-  const body = [
-    `${t("Name", "الاسم")}: ${data.get("name")}`,
-    `${t("Email", "البريد")}: ${data.get("email")}`,
-    `${t("Business", "النشاط")}: ${data.get("company")}`,
-    `${t("Project type", "نوع المشروع")}: ${$("#project-service").selectedOptions[0].textContent}`,
-    `${t("Budget", "الميزانية")}: ${$("#project-budget").selectedOptions[0].textContent}`,
-    "",
-    data.get("message"),
-  ].join("\n");
-  const link = $("#mail-draft");
-  link.href = `mailto:hello@ratqai.com?subject=${encodeURIComponent("RatqAI project inquiry" + (data.get("company") ? " — " + data.get("company") : ""))}&body=${encodeURIComponent(body)}`;
-  link.hidden = false;
-  $("#form-status").hidden = false;
-  $("#form-status").textContent = t(
-    "Your draft is ready to review. Nothing has been sent.",
-    "مسودتك جاهزة للمراجعة. لم تُرسل أي رسالة.",
-  );
-  link.focus();
+  const form = e.currentTarget;
+  if (inquiryState === "sending" || !form.reportValidity()) return;
+  const button = form.querySelector('button[type="submit"]');
+  inquiryState = "sending";
+  updateFormStatus();
+  button.disabled = true;
+  form.setAttribute("aria-busy", "true");
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15000);
+  try {
+    const response = await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(new FormData(form)).toString(),
+      signal: controller.signal,
+    });
+    if (!response.ok) throw new Error("Submission not accepted");
+    inquiryState = "success";
+    form.reset();
+  } catch {
+    inquiryState = "error";
+  } finally {
+    clearTimeout(timeout);
+    button.disabled = false;
+    form.removeAttribute("aria-busy");
+    updateFormStatus();
+  }
 });
 // One restrained photography movement; no scroll-jacking, no idle animation.
 let ticking = false;

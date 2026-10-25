@@ -122,16 +122,24 @@ fs.mkdirSync(out, { recursive: true });
   await p.locator('[name="company"]').fill("Fictional QA Company");
   await p.locator("#project-budget").selectOption("1000-3000");
   await p.locator('[name="message"]').fill("A bilingual website project.");
+  await p.locator('[name="phone"]').fill("+962790000000");
+  let payload = "";
+  await p.route("**/*", async (route) => {
+    if (route.request().method() === "POST") {
+      payload = route.request().postData();
+      await route.fulfill({ status: 200, body: "Accepted" });
+    } else await route.continue();
+  });
   await p.locator("#project-form button").click();
-  const mail = await p.locator("#mail-draft").getAttribute("href");
-  assert(mail.startsWith("mailto:hello@ratqai.com?"));
-  assert(decodeURIComponent(mail).includes("JOD 1,000–3,000"));
-  assert(decodeURIComponent(mail).includes("\n"));
-  assert(
-    (await p.locator("#form-status").innerText()).includes(
-      "Nothing has been sent",
-    ),
+  await p.waitForFunction(() =>
+    document.querySelector("#form-status").textContent.includes("received"),
   );
+  const submitted = new URLSearchParams(payload);
+  assert.equal(submitted.get("form-name"), "project-inquiry");
+  assert.equal(submitted.get("email"), "qa@example.com");
+  assert.equal(submitted.get("phone"), "+962790000000");
+  assert.equal(submitted.get("budget"), "1000-3000");
+  await p.unroute("**/*");
   await p.setViewportSize({ width: 390, height: 844 });
   await p.locator("#menu-toggle").click();
   assert.equal(
@@ -179,7 +187,7 @@ fs.mkdirSync(out, { recursive: true });
   );
   assert.deepEqual(broken, []);
   console.log(
-    "PASS: both routes, 20 language/viewport combinations, 5 concepts, gallery filtering, expertise accordion, inquiry/budget email draft, keyboard dialogs, mobile menu and reduced motion.",
+    "PASS: both routes, 20 language/viewport combinations, 5 concepts, gallery filtering, expertise accordion, inquiry submission payload, keyboard dialogs, mobile menu and reduced motion.",
   );
   await b.close();
 })().catch((e) => {

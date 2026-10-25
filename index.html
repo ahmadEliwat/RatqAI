@@ -47,7 +47,7 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="styles.css?v=31" />
+    <link rel="stylesheet" href="styles.css?v=32" />
   </head>
   <body data-page="home">
     <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
@@ -93,7 +93,6 @@
             data-src="assets/studio-film.mp4"
             poster="assets/studio-poster.webp"
             muted
-            loop
             playsinline
             preload="none"
             tabindex="-1"
@@ -103,10 +102,7 @@
         <div class="cinema-topline">
           <span data-motion-copy="cinemaLabel"
             >THE CRAFT BEHIND THE EXPERIENCE</span
-          ><button id="motion-toggle" aria-pressed="false">
-            <span class="motion-symbol" aria-hidden="true">Ⅱ</span
-            ><span class="motion-label">Pause motion</span>
-          </button>
+          >
         </div>
         <div class="hero-copy">
           <p class="eyebrow" data-i18n="heroEyebrow">
@@ -131,15 +127,6 @@
             >
           </div>
         </div>
-        <button class="reel-launch" data-reel>
-          <span class="play-ring" aria-hidden="true">▶</span
-          ><span
-            ><small data-motion-copy="reelEyebrow"
-              >A GLIMPSE OF THE POSSIBILITIES</small
-            ><strong data-motion-copy="reelLaunch">The work, in motion.</strong
-            ><em>00:12 / Concept Reel</em></span
-          >
-        </button>
         <div class="hero-bottom">
           <span data-i18n="heroFoot"
             >An independent studio. A business-first perspective.</span
@@ -293,7 +280,24 @@
               >Instagram / @ratqai ↗</a
             >
           </div>
-          <form id="project-form" class="project-form reveal">
+          <form
+            id="project-form"
+            class="project-form reveal"
+            name="project-inquiry"
+            method="POST"
+            action="/"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="form-name" value="project-inquiry" />
+            <p class="form-honeypot" hidden>
+              <label
+                >Leave this field empty<input
+                  name="bot-field"
+                  tabindex="-1"
+                  autocomplete="off"
+              /></label>
+            </p>
             <div class="form-pair">
               <label
                 ><span data-i18n="formName">Name</span
@@ -313,6 +317,18 @@
                   dir="ltr"
               /></label>
             </div>
+            <label
+              ><span data-i18n="formPhone">Mobile number</span
+              ><input
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+                inputmode="tel"
+                dir="ltr"
+                required
+                minlength="7"
+                maxlength="30"
+            /></label>
             <label
               ><span data-i18n="formCompany">Business name (optional)</span
               ><input
@@ -338,17 +354,14 @@
                 maxlength="3000"
               ></textarea></label
             ><button class="button gold" type="submit">
-              <span data-i18n="formSubmit">Prepare Your Inquiry</span
+              <span data-i18n="formSubmit">Send Your Inquiry</span
               ><span aria-hidden="true">↗</span>
             </button>
             <p class="form-note" data-i18n="formNote">
-              We’ll prepare an email draft for you to review and send in your
-              email app. Nothing is submitted or stored here.
+              Your details are shared with RatqAI to respond to your project
+              inquiry.
             </p>
             <p id="form-status" role="status" hidden></p>
-            <a id="mail-draft" class="text-link" hidden data-i18n="openEmail"
-              >Review email draft ↗</a
-            >
           </form>
         </div>
       </section>
@@ -391,40 +404,8 @@
       </p>
       <div id="demo-content"></div>
     </dialog>
-    <dialog id="film-dialog" class="film-dialog" aria-labelledby="film-title">
-      <div class="film-dialog-top">
-        <div>
-          <span class="eyebrow" data-motion-copy="reelEyebrow"
-            >A GLIMPSE OF THE POSSIBILITIES</span
-          >
-          <h2 id="film-title" data-motion-copy="reelTitle">
-            The concept reel.
-          </h2>
-        </div>
-        <button id="close-film" class="close-demo" aria-label="Close film">
-          ×
-        </button>
-      </div>
-      <video
-        id="concept-film"
-        controls
-        muted
-        playsinline
-        preload="none"
-        poster="assets/reel-poster-en.webp"
-      ></video>
-      <div class="film-caption">
-        <p data-motion-copy="reelDescription">
-          A visual study of Saffron House, Noura Academy, and Forma. Fictional
-          Concept / Demo interfaces, not client work.
-        </p>
-        <a href="concepts.html" data-motion-copy="reelExplore"
-          >Explore the interactive concepts ↗</a
-        >
-      </div>
-    </dialog>
     <div class="toast" id="toast" role="status" hidden></div>
-    <script src="script.js?v=31"></script>
-    <script src="motion.js?v=1"></script>
+    <script src="script.js?v=32"></script>
+    <script src="motion.js?v=2"></script>
   </body>
 </html>

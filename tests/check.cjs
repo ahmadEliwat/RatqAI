@@ -59,7 +59,7 @@ assert(
     .readFileSync("styles.css", "utf8")
     .includes("prefers-reduced-motion: reduce"),
 );
-assert(fs.readFileSync("index.html", "utf8").includes('id="project-budget"'));
+assert(!fs.readFileSync("index.html", "utf8").includes('name="budget"'));
 console.log(
   `PASS: both routes, syntax, ${Object.keys(copy).length} bilingual entries, requested headline, canonical/SEO, contacts, anchors, assets and reduced motion.`,
 );

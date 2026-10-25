@@ -336,14 +336,15 @@
                 autocomplete="organization"
                 maxlength="150"
             /></label>
-            <div class="form-pair">
+            <div class="project-type-field">
               <label
                 ><span data-i18n="formService">Project type</span
-                ><select name="service" id="project-service"></select></label
-              ><label
-                ><span data-i18n="formBudget">Budget range (optional)</span
-                ><select name="budget" id="project-budget"></select
-              ></label>
+                ><select name="service" id="project-service">
+                  <option value="Let’s explore together">
+                    Let’s explore together
+                  </option>
+                </select></label
+              >
             </div>
             <label
               ><span data-i18n="formMessage">A little about your project</span
@@ -405,7 +406,7 @@
       <div id="demo-content"></div>
     </dialog>
     <div class="toast" id="toast" role="status" hidden></div>
-    <script src="script.js?v=32"></script>
+    <script src="script.js?v=33"></script>
     <script src="motion.js?v=2"></script>
   </body>
 </html>

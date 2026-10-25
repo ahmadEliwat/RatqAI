@@ -122,7 +122,6 @@ const COPY = {
   formPhone: ["Mobile number", "رقم الجوال"],
   formCompany: ["Business name (optional)", "اسم النشاط التجاري (اختياري)"],
   formService: ["Project type", "نوع المشروع"],
-  formBudget: ["Budget range (optional)", "الميزانية المتوقّعة (اختياري)"],
   formMessage: ["A little about your project", "نبذة عن مشروعك"],
   formSubmit: ["Send Your Inquiry", "أرسل طلبك"],
   formNote: [
@@ -321,27 +320,15 @@ function renderServices() {
   ).join("");
 }
 function options() {
-  const a = $("#project-service"),
-    b = $("#project-budget");
+  const a = $("#project-service");
   if (!a) return;
-  const av = a.value,
-    bv = b.value;
+  const previous = a.value;
   a.innerHTML =
-    `<option value="">${t("Let’s explore together", "لنستكشف معًا")}</option>` +
+    `<option value="Let’s explore together">${t("Let’s explore together", "لنستكشف معًا")}</option>` +
     SERVICES.map(
       (s) => `<option value="${s[0]}">${t(s[0], s[1])}</option>`,
     ).join("");
-  b.innerHTML = [
-    ["", "Let’s discuss", "لنناقشها معًا"],
-    ["under-1000", "Under JOD 1,000", "أقل من 1,000 د.أ"],
-    ["1000-3000", "JOD 1,000–3,000", "1,000–3,000 د.أ"],
-    ["3000-7000", "JOD 3,000–7,000", "3,000–7,000 د.أ"],
-    ["7000-plus", "JOD 7,000+", "أكثر من 7,000 د.أ"],
-  ]
-    .map(([v, en, ar]) => `<option value="${v}">${t(en, ar)}</option>`)
-    .join("");
-  a.value = av;
-  b.value = bv;
+  a.value = previous || "Let’s explore together";
 }
 function renderGallery() {
   const data = [

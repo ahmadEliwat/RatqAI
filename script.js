@@ -300,6 +300,7 @@ function refreshSamples() {
   if ($("#dining-preview")) $("#dining-preview").innerHTML = diningUI();
   if ($("#academy-preview")) $("#academy-preview").innerHTML = academyUI();
   if ($("#concept-grid")) renderGallery();
+  window.RatqShowcase?.paintPreviews();
 }
 function renderServices() {
   if (!$("#service-list")) return;
@@ -336,7 +337,10 @@ function renderGallery() {
       "dining",
       "websites",
       "Saffron House",
-      t("Restaurant website, menu & reservations", "موقع مطعم وقائمة وحجوزات"),
+      t(
+        "Restaurant discovery → seasonal menu → seating and reservation request",
+        "استكشاف المطعم ← القائمة الموسمية ← اختيار الجلسة وطلب الحجز",
+      ),
       diningUI(),
     ],
     [
@@ -344,8 +348,8 @@ function renderGallery() {
       "systems",
       "Noura Academy",
       t(
-        "Student enrollment & academy management",
-        "تسجيل الطلاب وإدارة الأكاديمية",
+        "Admissions inbox → applicant search → review queue → class schedule",
+        "طلبات القبول ← البحث عن متقدّم ← قائمة المراجعة ← جدول الصفوف",
       ),
       academyUI(),
     ],
@@ -353,14 +357,20 @@ function renderGallery() {
       "retail",
       "websites",
       "Forma",
-      t("Online storefront & order management", "متجر إلكتروني وإدارة الطلبات"),
+      t(
+        "Product discovery → size selection → editable shopping bag",
+        "استكشاف المنتج ← اختيار المقاس ← حقيبة تسوّق قابلة للتعديل",
+      ),
       `<div class="retail-composition">${retailUI()}</div>`,
     ],
     [
       "property",
       "websites",
       "Darna Properties",
-      t("Property discovery & inquiries", "استكشاف العقارات والاستفسارات"),
+      t(
+        "Neighbourhood filter → residence details → private viewing request",
+        "فلترة المنطقة ← تفاصيل العقار ← طلب معاينة خاصة",
+      ),
       `<div class="gallery-property"><img src="assets/residence.webp" alt="" loading="lazy" width="1400" height="933"><b dir="ltr">DARNA<span>PROPERTIES</span></b><p>${t("Find your place.", "اكتشف مساحتك.")}</p></div>`,
     ],
     [
@@ -368,8 +378,8 @@ function renderGallery() {
       "systems",
       "Folio",
       t(
-        "Client relationships & business operations",
-        "علاقات العملاء وعمليات الأعمال",
+        "Sales opportunities → pipeline stages → owners and follow-up queue",
+        "فرص البيع ← مراحل المبيعات ← المسؤول والمتابعة",
       ),
       crmUI(),
     ],
@@ -380,9 +390,10 @@ function renderGallery() {
   $("#concept-grid").innerHTML = visible
     .map(
       ([id, type, name, desc, ui]) =>
-        `<article class="concept-card"><div class="concept-thumbnail" aria-hidden="true" inert>${ui}</div><div class="concept-card-caption"><span class="eyebrow">${t("Concept / Demo", "تصوّر / تجربة توضيحية")}</span><h2 dir="ltr">${name}</h2><p>${desc}</p><button data-demo="${id}" class="text-link">${t("Open interactive concept", "افتح التجربة التفاعلية")} ↗</button></div></article>`,
+        `<article class="concept-card"><div class="concept-thumbnail" aria-hidden="true" inert>${ui}</div><div class="concept-card-caption"><span class="eyebrow">${t("Concept / Demo", "تصوّر / تجربة توضيحية")}</span><h2 dir="ltr">${name}</h2><p>${desc}</p><button data-demo="${id}" class="text-link">${t("Explore the live demo", "استكشف التجربة التفاعلية")} ↗</button></div></article>`,
     )
     .join("");
+  window.RatqShowcase?.paintPreviews();
   $("#gallery-count").textContent = t(
     `${visible.length} concepts · fictional businesses and sample data`,
     `${visible.length} تصوّرات · علامات خيالية وبيانات افتراضية`,
@@ -535,6 +546,10 @@ function renderDemo(kind) {
     crm: t("Folio / client workspace", "Folio / مساحة العملاء"),
   };
   $("#demo-title").textContent = title[kind];
+  if (window.RatqShowcase) {
+    window.RatqShowcase.open(kind);
+    return;
+  }
   let content = "";
   if (kind === "dining") {
     content = `<div class="demo-frame">${diningUI()}</div><div class="demo-controls"><h3>${t("A table for your next story.", "طاولة لحكايتك القادمة.")}</h3><p>${t("Try a reservation request with sample details. No booking is made.", "جرّب طلب حجز ببيانات افتراضية. لن يُنفَّذ حجز فعلي.")}</p><form id="reservation-demo" class="demo-form"><label>${t("Date", "التاريخ")}<input type="date" name="date" required min="${new Date().toLocaleDateString("en-CA")}" aria-label="${t("Reservation date", "تاريخ الحجز")}"></label><label>${t("Guests", "عدد الضيوف")}<select name="guests"><option>2</option><option>4</option><option>6</option></select></label><label>${t("Time", "الوقت")}<select name="time"><option>18:00</option><option>19:30</option><option>21:00</option></select></label><button class="sample-button">${t("Preview reservation", "جرّب طلب الحجز")} ↗</button></form><p class="demo-output" role="status" id="reservation-result">${demoState.booking ? t("Sample request received. A real system would notify your team.", "تمت محاكاة الطلب. في النظام الفعلي، يصل إشعار لفريقك.") : ""}</p></div>`;

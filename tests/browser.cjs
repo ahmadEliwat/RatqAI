@@ -80,34 +80,7 @@ fs.mkdirSync(out, { recursive: true });
     await p.locator(`.concept-card-caption [data-demo="${id}"]`).click();
     assert(await p.locator("#demo-dialog").isVisible());
     await width("dialog " + id);
-    if (id === "dining") {
-      await p.locator("#reservation-demo button").click();
-      assert(
-        (await p.locator("#reservation-result").innerText()).includes(
-          "No booking was sent",
-        ),
-      );
-    }
-    if (id === "academy") {
-      await p.locator('[data-action="enroll"]').click();
-      assert(
-        (await p.locator("#demo-content").innerText()).includes(
-          "Demo applicant",
-        ),
-      );
-    }
-    if (id === "retail") {
-      await p.locator('[data-action="add-cart"]').click();
-      assert((await p.locator("#cart-result").innerText()).includes("1"));
-    }
-    if (id === "property") {
-      await p.locator('[data-filter="Abdoun"]').click();
-      assert.equal(await p.locator(".listing:visible").count(), 1);
-    }
-    if (id === "crm") {
-      await p.locator('[data-action="move-lead"]').click();
-      assert(await p.locator('[data-action="move-lead"]').isDisabled());
-    }
+    assert.equal(await p.locator("#demo-content .sx").count(), 1);
     await p.keyboard.press("Escape");
     assert(!(await p.locator("#demo-dialog").isVisible()));
   }
@@ -156,10 +129,8 @@ fs.mkdirSync(out, { recursive: true });
   );
   await p.locator("#langToggle").click();
   await p.locator('.round-link[data-demo="dining"]').click();
-  await p.locator("#reservation-demo button").click();
-  assert(
-    (await p.locator("#reservation-result").innerText()).includes("لم يُرسل"),
-  );
+  await p.locator('[data-sx="reserve"]').click();
+  assert((await p.locator(".sx-form-wrap h2").innerText()).includes("أمسية"));
   await width("Arabic mobile dialog");
   await p.screenshot({ path: path.join(out, "ar-mobile-dialog.png") });
   await p.keyboard.press("Escape");

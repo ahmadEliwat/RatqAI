@@ -5,6 +5,9 @@ const assert = require("node:assert/strict"),
 process.chdir(path.resolve(__dirname, ".."));
 const js = fs.readFileSync("script.js", "utf8");
 new vm.Script(js, { filename: "script.js" });
+new vm.Script(fs.readFileSync("showcase.js", "utf8"), {
+  filename: "showcase.js",
+});
 const copy = vm.runInNewContext(
   js.slice(js.indexOf("const COPY ="), js.indexOf("const SERVICES =")) +
     "COPY;",
@@ -48,6 +51,8 @@ for (const f of [
   "netlify.toml",
   "styles.css",
   "script.js",
+  "showcase.js",
+  "showcase.css",
   "assets/dining.webp",
   "assets/fashion.webp",
   "assets/residence.webp",

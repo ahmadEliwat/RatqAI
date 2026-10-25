@@ -22,10 +22,10 @@ The visual direction preserves midnight navy `#101a25`, champagne `#d8bd90`, the
 All sample brands, data, prices and statistics are fictional. They are not delivered client work or claimed results.
 
 - **Saffron House:** restaurant, menu and reservation simulation; nothing booked or sent.
-- **Noura Academy:** a sample pending application can be added; active-student totals stay unchanged.
-- **Forma:** session shopping bag and inventory overview; no checkout, payment or orders are placed.
-- **Darna Properties:** fictional Amman residences with location filters and an inquiry simulation. Photos do not show actual Jordan listings.
-- **Folio:** a sample lead can move to In discussion; no notifications are sent.
+- **Noura Academy:** searchable admissions records, a validated new-application form and a four-session class schedule; new applications enter review while active-student totals stay unchanged.
+- **Forma:** an editorial storefront, product details, size selection and an editable session bag with calculated totals; no checkout, payment or orders are placed.
+- **Darna Properties:** three fictional Amman residences with neighbourhood filters, property-detail views, and a validated private-viewing request simulation. Photos do not show actual Jordan listings.
+- **Folio:** a four-stage sales pipeline with opportunity values, owners, stage movement and a follow-up/activity queue; no notifications are sent.
 
 The real project form collects name, email, required mobile number, optional business, project type, and description. It posts URL-encoded data directly to Netlify Forms, with a honeypot, native field validation, pending/success/failure states, duplicate-submit protection and a 15-second timeout. Failed attempts retain entered details. Success indicates server acceptance, not confirmed inbox delivery. Netlify form detection is enabled, and submission email notifications are configured to `hello@ratqai.com` in the existing project settings. Email is `hello@ratqai.com`, Instagram is `@ratqai`. No WhatsApp contact is present.
 
@@ -56,3 +56,9 @@ The hero runs once for less than five seconds, then holds still. It also pauses 
 Each service has a local, lazy-loaded illustrative picture: four screenshots of the fictional concept interfaces and two original workflow/integration diagrams. The sample screenshots contain illustrative English interfaces; their surrounding copy and image alternatives are translated into Arabic. Concept entry buttons and the collection link have larger targets, high contrast and stronger weight.
 
 Netlify Forms documentation: https://docs.netlify.com/manage/forms/setup/ and https://docs.netlify.com/manage/forms/notifications/ . A real preview submission must be checked in the Netlify Forms dashboard; mailbox receipt must be confirmed by the owner. Budget is not requested. The default project type is submitted as “Let’s explore together”; specific selections retain their full service name. Site-wide form detection and notification configuration do not publish the V2 homepage to production. No DNS, mailbox or production deployment settings were changed.
+
+## Product demonstrations — revised
+
+`showcase.js` and `showcase.css` provide five distinct product experiences in the existing native dialog, with no new dependencies. Each has branded navigation and a practical journey rather than an isolated interface snapshot. The homepage and gallery covers are updated to match, and service illustrations 1–4 are regenerated from these demos. The extra residence photograph is Unsplash `photo-1600047509807-ba8f99d2cdde`, locally optimized as `garden.webp`; it does not represent an actual Jordan listing.
+
+Run `node tests/showcase.cjs` with the same Playwright configuration to check all five demos in EN/AR at 1440, 768, 390 and 320px, plus menu/reservation, property search/detail/viewing, bag totals/removal, admissions search/application/schedule and pipeline/activity workflows. All demonstration data stays in page memory. Demo forms never post to Netlify or send emails. The separate real project inquiry form retains its existing submission behavior and has no budget field.

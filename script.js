@@ -514,6 +514,7 @@ function setLanguage(next) {
       "What would you like to build or improve?",
       "ما الذي ترغب في بنائه أو تحسينه؟",
     );
+  window.RatqMotion?.syncLocale();
   refreshSamples();
   renderServices();
   options();
@@ -769,7 +770,10 @@ function updateScroll() {
   ticking = false;
   const y = window.scrollY;
   document.body.classList.toggle("scrolled", y > 30);
-  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  if (
+    !matchMedia("(prefers-reduced-motion: reduce)").matches &&
+    !document.body.classList.contains("motion-paused")
+  ) {
     document
       .querySelectorAll(".case-display .saffron-photo img")
       .forEach((img) => {

@@ -8,13 +8,14 @@ Run `python -m http.server 8766 --bind 127.0.0.1`, then open http://127.0.0.1:87
 
 - `node tests/check.cjs`: syntax, translation coverage, SEO, anchor and asset checks.
 - `node tests/browser.cjs`: Playwright browser checks. Point `PLAYWRIGHT_PACKAGE` at an installed Playwright module if needed and `CHROME_PATH` at Chrome. Optional `QA_URL` and `QA_OUTPUT` choose the target and screenshot folder. These are development tools, never loaded by the site.
+- `node tests/motion.cjs`: native video playback, locale-specific reels, motion controls, reduced motion and data saver checks (same Playwright configuration).
 - `git diff --check`: whitespace review.
 
 ## Editorial structure
 
 The homepage is deliberately curated: the requested engineering-led hero, a six-service expertise accordion, two leading concept case studies, Why RatqAI, Discover/Design/Develop/Launch, and a project inquiry form. The separate `concepts.html` collection organizes all five concepts with filters and full-size interactive dialogs.
 
-The visual direction preserves midnight navy `#101a25`, champagne `#d8bd90`, the original favicon, and the existing lowercase wordmark. A single software review interface replaces the earlier restaurant collage. Product typography is larger, layouts share a consistent frame and caption system, and photography is locally optimized WebP. Headline entrances, scroll reveals, restrained photography parallax and hover treatments respect reduced motion without scroll-jacking.
+The visual direction preserves midnight navy `#101a25`, champagne `#d8bd90`, the original favicon, and the existing lowercase wordmark. A silent cinematic programming film anchors the hero, with a separate 12-second concept reel in English and Arabic. Product typography is larger, layouts share a consistent frame and caption system, and photography is locally optimized WebP. Headline entrances, scroll reveals, restrained photography parallax and hover treatments respect reduced motion without scroll-jacking.
 
 ## Concepts and contact behavior
 
@@ -43,3 +44,9 @@ See [the design audit](docs/DESIGN-AUDIT.md) and [annotated comparison](docs/des
 Browser QA covers both pages at 1440, 1024, 768, 390 and 320px in both languages, five interactive concepts, gallery filters, the expertise accordion, budget email draft, mobile navigation, native dialogs/Escape, language persistence and reduced motion. Page-level axe-core WCAG A/AA checks were run for both pages in English and Arabic. These checks do not constitute aesthetic approval or replace real-device and assistive-technology review.
 
 SEO metadata, canonical homepage URL, robots, sitemap, Organization structured data, contact details, and existing Netlify configuration are preserved. The concept gallery has its own canonical path. Connected Business remains absent. Existing Netlify preview login protection was not changed; unauthenticated hosted browser validation is limited by that gate. All design captures used the exact source served locally. Production remains unchanged.
+
+## Cinematic media
+
+The silent hero clip is illustrative stock footage, not footage of the RatqAI team: [Mixkit — Skilled programmer working in front of a computer](https://mixkit.co/free-stock-video/skilled-programmer-working-in-front-of-a-computer-41651/), supplied under the Mixkit Free License. It is locally encoded as a roughly 595 KB MP4. The English and Arabic concept reels are original screen presentations of the fictional Saffron, Noura and Forma interfaces, roughly 512 KB and 469 KB, respectively. Each lasts 12 seconds. Posters are local WebP.
+
+Hero playback pauses offscreen and when a reel opens. A visible control pauses decorative movement. Reduced-motion and data-saver preferences start with a static poster and no hero video request. Reels load only on explicit activation and provide native video controls; their adjacent copy explains the fictional demos. No audio, new runtime dependencies or production configuration changes were introduced.

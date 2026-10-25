@@ -155,7 +155,8 @@ fs.mkdirSync(out, { recursive: true });
   await p.reload();
   assert.equal(await p.locator("html").getAttribute("lang"), "ar");
   const rm = await p
-    .locator(".craft-browser")
+    .locator(".hero-line > span")
+    .first()
     .evaluate((e) => ({
       transform: getComputedStyle(e).transform,
       animation: getComputedStyle(e).animationName,

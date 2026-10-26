@@ -1,24 +1,64 @@
-# RatqAI — website starter
+# RatqAI V2 — design rescue, revision two
 
-A responsive, single-page, static marketing website. English / Arabic language switcher, no database, no account system, no backend. All copy can be edited in `index.html` and `script.js`.
+Static HTML/CSS/JavaScript on `feature/ratqai-v2-phase-one`, for PR #1 only. **Do not merge or deploy to production without owner approval.**
 
-## Run locally
-Double-click `index.html` or run a local server:
+## Run and validate
 
-```bash
-python -m http.server 8080
-```
+Run `python -m http.server 8766 --bind 127.0.0.1`, then open http://127.0.0.1:8766/ and http://127.0.0.1:8766/concepts.html. There is no install, backend, database or build step.
 
-Then visit `http://localhost:8080`.
+- `node tests/check.cjs`: syntax, translation coverage, SEO, anchor and asset checks.
+- `node tests/browser.cjs`: Playwright browser checks. Point `PLAYWRIGHT_PACKAGE` at an installed Playwright module if needed and `CHROME_PATH` at Chrome. Optional `QA_URL` and `QA_OUTPUT` choose the target and screenshot folder. These are development tools, never loaded by the site.
+- `node tests/motion.cjs`: finite native video playback, removed reel/control, reduced motion and data saver checks (same Playwright configuration).
+- `git diff --check`: whitespace review.
 
-## Before publishing — IMPORTANT
-1. Open `script.js` and replace the two empty entries at the top in `CONTACT` with your **real business email** and your **WhatsApp number including country code, digits only**. Until then, the links are purposely disabled rather than linking to someone else's contact details.
-2. Review all wording to make sure it accurately represents services you can deliver. The site intentionally contains no fabricated testimonials, results, or client logos.
-3. Check trademark/name/domain availability before making `RatqAI` your public brand.
-4. Replace the placeholder brand name throughout if you select a different name.
-5. Add a privacy notice before collecting leads through any future embedded form or analytics.
+## Editorial structure
 
-## Deploy
-For **Cloudflare Pages**, create a Pages project and upload the files in this directory, or connect a Git repository with a static deployment (no build command; output directory `/`). Other static hosts work too.
+The homepage is deliberately curated: the requested engineering-led hero, a six-service expertise accordion, two leading concept case studies, Why RatqAI, Discover/Design/Develop/Launch, and a project inquiry form. The separate `concepts.html` collection organizes all five concepts with filters and full-size interactive dialogs.
 
-Fonts are loaded from Google Fonts and require network access. The site falls back to system fonts without them.
+The visual direction preserves midnight navy `#101a25`, champagne `#d8bd90`, the original favicon, and the existing lowercase wordmark. A silent cinematic programming film anchors the hero, as a brief entrance, with no reel or pause button. Product typography is larger, layouts share a consistent frame and caption system, and photography is locally optimized WebP. Headline entrances, scroll reveals, restrained photography parallax and hover treatments respect reduced motion without scroll-jacking.
+
+## Concepts and contact behavior
+
+All sample brands, data, prices and statistics are fictional. They are not delivered client work or claimed results.
+
+- **Saffron House:** restaurant, menu and reservation simulation; nothing booked or sent.
+- **Noura Academy:** searchable admissions records, a validated new-application form and a four-session class schedule; new applications enter review while active-student totals stay unchanged.
+- **Forma:** an editorial storefront, product details, size selection and an editable session bag with calculated totals; no checkout, payment or orders are placed.
+- **Darna Properties:** three fictional Amman residences with neighbourhood filters, property-detail views, and a validated private-viewing request simulation. Photos do not show actual Jordan listings.
+- **Folio:** a four-stage sales pipeline with opportunity values, owners, stage movement and a follow-up/activity queue; no notifications are sent.
+
+The real project form collects name, email, required mobile number, optional business, project type, and description. It posts URL-encoded data directly to Netlify Forms, with a honeypot, native field validation, pending/success/failure states, duplicate-submit protection and a 15-second timeout. Failed attempts retain entered details. Success indicates server acceptance, not confirmed inbox delivery. Netlify form detection is enabled, and submission email notifications are configured to `hello@ratqai.com` in the existing project settings. Email is `hello@ratqai.com`, Instagram is `@ratqai`. No WhatsApp contact is present.
+
+English and Arabic share complete navigation, form and sample-interface translations with RTL composition. Language preference alone is persisted locally. Concept state lives only in page memory. Brand names and SKU identifiers retain their own direction.
+
+## Assets and branding limitation
+
+The official full logo image asset is **not present** in the repository or newly supplied brief. The existing wordmark is retained without inventing a new logo. The owner should supply the exact official SVG/PNG before final branding approval.
+
+Illustrative photos are from Unsplash, optimized locally: dining `photo-1414235077428-338989a2e8c0`; neutral knitwear `photo-1434389677669-e08b4cac3105`; residence `photo-1600596542815-ffad4c1539a9`; interior `photo-1600210492486-724fe5c67fb0`. They do not represent the fictional businesses. Google Fonts Manrope, DM Sans and Tajawal have system fallbacks. No runtime image CDN or animation library is required.
+
+## Review evidence and deployment boundary
+
+See [the design audit](docs/DESIGN-AUDIT.md) and [annotated comparison](docs/design-review.jpg). Full desktop/tablet/mobile captures in EN/AR are supplied as a separate local review artifact rather than shipping large screenshot collections with the website.
+
+Browser QA covers both pages at 1440, 1024, 768, 390 and 320px in both languages, five interactive concepts, gallery filters, the expertise accordion, complete inquiry submission payload (name, email, phone, business, project type and message), mobile navigation, native dialogs/Escape, language persistence and reduced motion. Page-level axe-core WCAG A/AA checks were run for both pages in English and Arabic. These checks do not constitute aesthetic approval or replace real-device and assistive-technology review.
+
+SEO metadata, canonical homepage URL, robots, sitemap, Organization structured data, contact details, and existing Netlify configuration are preserved. The concept gallery has its own canonical path. Connected Business remains absent. Existing Netlify preview login protection was not changed; unauthenticated hosted browser validation is limited by that gate. All design captures used the exact source served locally. Production remains unchanged.
+
+## Cinematic media
+
+The silent hero clip is illustrative stock footage, not footage of the RatqAI team: [Mixkit — Skilled programmer working in front of a computer](https://mixkit.co/free-stock-video/skilled-programmer-working-in-front-of-a-computer-41651/), supplied under the Mixkit Free License. It is locally encoded as a roughly 595 KB MP4. Posters are local WebP. The separate concept reel and its assets have been removed at the owner’s request.
+
+The hero runs once for less than five seconds, then holds still. It also pauses offscreen. There is no persistent loop or pause button. Reduced-motion and data-saver preferences start with a static poster and no hero video request. No new runtime dependency was introduced.
+
+## Expertise and inquiry review
+
+Each service has a local, lazy-loaded illustrative picture: four screenshots of the fictional concept interfaces and two original workflow/integration diagrams. The sample screenshots contain illustrative English interfaces; their surrounding copy and image alternatives are translated into Arabic. Concept entry buttons and the collection link have larger targets, high contrast and stronger weight.
+
+Netlify Forms documentation: https://docs.netlify.com/manage/forms/setup/ and https://docs.netlify.com/manage/forms/notifications/ . A real preview submission must be checked in the Netlify Forms dashboard; mailbox receipt must be confirmed by the owner. Budget is not requested. The default project type is submitted as “Let’s explore together”; specific selections retain their full service name. Site-wide form detection and notification configuration do not publish the V2 homepage to production. No DNS, mailbox or production deployment settings were changed.
+
+## Product demonstrations — revised
+
+`showcase.js` and `showcase.css` provide five distinct product experiences in the existing native dialog, with no new dependencies. Each has branded navigation and a practical journey rather than an isolated interface snapshot. The homepage and gallery covers are updated to match, and service illustrations 1–4 are regenerated from these demos. The extra residence photograph is Unsplash `photo-1600047509807-ba8f99d2cdde`, locally optimized as `garden.webp`; it does not represent an actual Jordan listing.
+
+Run `node tests/showcase.cjs` with the same Playwright configuration to check all five demos in EN/AR at 1440, 768, 390 and 320px, plus menu/reservation, property search/detail/viewing, bag totals/removal, admissions search/application/schedule and pipeline/activity workflows. All demonstration data stays in page memory. Demo forms never post to Netlify or send emails. The separate real project inquiry form retains its existing submission behavior and has no budget field.
